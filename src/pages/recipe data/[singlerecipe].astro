@@ -1,0 +1,20 @@
+---
+// import type { GetStaticPaths } from "astro";
+// export async function export const getStaticPaths = (() => { 
+//         return [];
+// }) satisfies GetStaticPaths;
+
+const url 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes?select=some_column,other_table(foreign_key)';
+
+const key 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const request = await fetch(url, options);
+const data = await request.json();
+console.log(data)
+---
