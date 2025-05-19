@@ -1,0 +1,94 @@
+---
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Recipes', href: '/recipes' },
+];
+---
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background: white;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    nav.desktop-nav {
+      display: none;
+    }
+
+    .burger {
+      display: flex;
+    }
+
+    .mobile-nav.show {
+      display: flex;
+    }
+  }
+</style>
+
+<header>
+  <h1>Logo</h1>
+
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
+    {navItems.map((item) => (
+      <a href={item.href}>{item.name}</a>
+    ))}
+  </nav>
+
+  <!-- Burger Icon -->
+  <div class="burger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</header>
+
+<!-- Mobile Navigation -->
+<nav id="mobileMenu" class="mobile-nav">
+  {navItems.map((item) => (
+    <a href={item.href}>{item.name}</a>
+  ))}
+</nav>
+
+<script is:inline>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+  }
+</script>
