@@ -29,30 +29,41 @@ import { useEffect, useState } from 'astro/jsx-runtime';
 </div>
 
 <style>
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: var(--color-background);
-  }
+a {
+  font-family: "Hedvig Letters Serif", serif;
+  font-size: 1.3rem;
+}  
+header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 2rem;
+  background: var(--color-background);
+}
 
-  nav {
-    display: flex;
-    gap: 1rem;
-  }
+.logo {
+  justify-self: start;
+}
+
+nav {
+  justify-self: center;
+  display: flex;
+  gap: 4rem;
+}
 
   .burger {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    /* justify-self: end; */
   }
 
   .burger span {
-    width: 25px;
+    width: 30px;
     height: 3px;
     background: #333;
     margin: 4px 0;
+    border-radius: 2px;
   }
 
   .mobile-menu {
@@ -67,12 +78,18 @@ import { useEffect, useState } from 'astro/jsx-runtime';
       display: none;
     }
 
+    header {
+      display: flex;
+      justify-content: space-between;    
+    }
+
     .burger {
       display: flex;
     }
 
     .mobile-menu.show {
       display: flex;
+      align-items: center;
     }
   }
 </style>
