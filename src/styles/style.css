@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin: 2rem;
+    background-color: var(--color-background);
+
+}
+
+:root {
+    --color-background: #F9F2E0;
+    --color-primary: #012FA8;
+    --color-secondary: #0c7bd6;
+    --color-accent1: #607740;
+    --color-accent2:#7F5E3A;
+    --color-accent3:#858854;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
