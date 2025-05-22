@@ -2,9 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import RecipeCard from '../components/RecipeCard.astro';
 
+// data indhentet fra Supabase:
 const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes'
 const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
 
+//gør at man får adgang til at bruge API dataen. 
+// headers spørger og giver instruktion. 
+// apikey er nøglen til at bekræfte hvem jeg er så jeg kan kontrollere og få adgang.
 const options = {
   headers: {
     apikey: key,
@@ -17,5 +21,20 @@ console.log(data)
 ---
 
 <Layout>
+  <section>
+    <h1>Recipes</h1>
+
+    <div class="cards">
         {data.map((recipe) => <RecipeCard data={recipe} />)}
+    </div>
+  </section>
 </Layout>
+
+<style>
+  * {margin: 2rem;}
+  .cards {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+</style>
