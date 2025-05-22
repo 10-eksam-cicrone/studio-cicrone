@@ -4,6 +4,8 @@ const {data} = Astro.props;
 
 <article>
 
+<a href={`/single-recipe/${data.id}`}>{data.name}</a>
+
 <div class="øverst">
     <div>
     <h2> {data.name} </h2>
@@ -25,13 +27,13 @@ const {data} = Astro.props;
     <p>{data.description}</p>
     </div>
 </div>
-   
+   </a>
+
 </article>
 
 <style>
     .øverst, .nederst {
         display: flex;
-        columns: 1fr 1fr;
         justify-content: space-between;
         gap: 2rem;
     }

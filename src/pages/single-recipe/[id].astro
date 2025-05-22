@@ -1,0 +1,78 @@
+---
+// import type { GetStaticPaths } from "astro";
+// export async function export const getStaticPaths = (() => { 
+//         return [];
+// }) satisfies GetStaticPaths;
+
+import Layout from '../../layouts/Layout.astro';
+
+// const { id } = Astro.params
+
+// export async function getStaticPaths() {
+// // const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes?select=some_column,other_table(foreign_key)';
+// const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes?id=eq.${id}';
+// const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
+
+// const options = {
+//   headers: {
+//     apikey: key,
+//   },
+// };
+
+// const response = await fetch(url, options);
+// const [data] = await response.json(); 
+
+// return data.map(recipe => ({
+//     params: { id: recipe.id.toString() },
+//   }));
+// }
+
+
+
+export async function getStaticPaths() {
+  const url = 'https://your.supabase.url/rest/v1/Studio-citron-recipes';
+ const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
+
+  const response = await fetch(url, {
+    headers: { apikey: key }
+  });
+
+  const recipes = await response.json();
+
+  return recipes.map(recipe => ({
+    params: { id: recipe.id.toString() },
+  }));
+}
+
+const { id } = Astro.params;
+
+const url = `https://your.supabase.url/rest/v1/Studio-citron-recipes?id=eq.${id}`;
+ const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
+
+const response = await fetch(url, {
+  headers: { apikey: key }
+});
+
+const [recipe] = await response.json(); // OK if response is an array
+---
+<Layout>
+  <h1>{recipe.name}</h1>
+  <p>Time: {recipe.time} min</p>
+  <p>Servings: {recipe.servings}</p>
+  <img src={recipe['main image']} alt={recipe.name} />
+</Layout>
+
+
+
+
+<!-- <Layout>
+    <div>
+    <h2> {data.name} </h2>
+    <h3>Time: {data.time} min.</h3>
+    <h3>Servings: {data.servings} Portions</h3>
+    </div>
+
+    <div>
+    <img src={data['main image']} alt={data.name} />
+    </div>
+</Layout> -->
