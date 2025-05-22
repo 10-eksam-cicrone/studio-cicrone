@@ -4,10 +4,42 @@ const {data} = Astro.props;
 
 <article>
 
-   <h3> {data.name} </h3>
-   <p>{data.description}</p>
-    </article>
+<div class="øverst">
+    <div>
+    <h2> {data.name} </h2>
+    <h3>Time: {data.time} min.</h3>
+    <h3>Servings: {data.servings} Portions</h3>
+    </div>
+
+    <div>
+    <img src={data['main image']} alt={data.name} />
+    </div>
+</div>
+   
+<div class="nederst">
+    <div>
+    <h3>Seasons: <br> {data.season}</h3>
+    </div>
+
+    <div>
+    <p>{data.description}</p>
+    </div>
+</div>
+   
+</article>
 
 <style>
-    
+    .øverst, .nederst {
+        display: flex;
+        columns: 1fr 1fr;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .nederst {
+    align-items: flex-end;
+    }
+    img, p {
+        width: 250px;
+    }
 </style>

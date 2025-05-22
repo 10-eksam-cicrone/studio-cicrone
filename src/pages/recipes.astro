@@ -21,6 +21,8 @@ console.log(data)
 ---
 
 <Layout>
+  <main>
+
   <section>
     <h1>Recipes</h1>
 
@@ -28,13 +30,15 @@ console.log(data)
         {data.map((recipe) => <RecipeCard data={recipe} />)}
     </div>
   </section>
+  
+  </main>
 </Layout>
 
 <style>
   * {margin: 2rem;}
   .cards {
     display: grid;
-    gap: 2rem;
+    gap: 8rem;
     grid-template-columns: 1fr 1fr;
   }
 </style>
