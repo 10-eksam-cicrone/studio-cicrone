@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 
 type Recipe = {
   id: number;
-  image: string;
+  main_image: string;
   name: string;
   season: string[];
   description: string;
@@ -49,9 +49,10 @@ const { data } = Astro.props;
 
 ---
 
+
 <Layout>
     <div>
-    <img src={data['main image']} alt={data.name} />
+    <img src={data.main_image} alt={data.name} />
     </div>
 
     <h2> {data.name} </h2>

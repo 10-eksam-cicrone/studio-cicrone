@@ -56,6 +56,10 @@ h2, h3, h4, p {
       font-family: "Hedvig Letters Serif", serif;
 }
 
+p {
+  color: var(--color-primary);
+}
+
 a {
   color: inherit;
   text-decoration: none;
