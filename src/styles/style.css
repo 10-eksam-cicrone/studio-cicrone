@@ -7,17 +7,17 @@
 }
 
 main {
-    margin: 2rem;
+    margin: 4rem;
 }
 
   @media (max-width: 768px) {
-    main {
+    /* main {
     margin: 1rem;
-  }
+  } */
 }
 
 :root {
-    --color-background: #F9F2E0;
+    --color-background: #FFFDF2;
     --color-primary: #012FA8;
     --color-secondary: #0c7bd6;
     --color-accent1: #607740;
@@ -49,6 +49,7 @@ h1 {
     font-size: 6rem;
     text-align: center;
     padding: 2rem;
+    color: var(--color-primary);
 }
 
 h2, h3, h4, p {

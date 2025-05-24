@@ -1,78 +1,133 @@
 ---
-// import type { GetStaticPaths } from "astro";
-// export async function export const getStaticPaths = (() => { 
-//         return [];
-// }) satisfies GetStaticPaths;
-
 import Layout from '../../layouts/Layout.astro';
 
-// const { id } = Astro.params
-
-// export async function getStaticPaths() {
-// // const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes?select=some_column,other_table(foreign_key)';
-// const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes?id=eq.${id}';
-// const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
-
-// const options = {
-//   headers: {
-//     apikey: key,
-//   },
-// };
-
-// const response = await fetch(url, options);
-// const [data] = await response.json(); 
-
-// return data.map(recipe => ({
-//     params: { id: recipe.id.toString() },
-//   }));
-// }
-
+type Recipe = {
+  id: number;
+  image: string;
+  name: string;
+  season: string[];
+  description: string;
+  time: number;
+  servings: number;
+  measurements: string[];
+  ingredients: string[];
+  method: string[];
+};
+//det her er til at definere hvilken type data vi henter fra supabase, 
+// så astro (og TypeScript type) ved om fx "time" er tekst, tal eller array
+//string=tekst   number=tal   []=array (flere tekster eller tal)
+//egentligt behøves det her ikke for at koden virker som den skal, 
+// men ellers kommer “Property 'name' does not exist on type 'never'” frem de steder vi bruger dataen fra Supabase
+//hvis det er besværligt eller i ikke kan forklare det til eksam, så bare slet det siden det ikke påvirker hjemmesiden:) brugte bare tid på at finde ud af det
+//så skal ": Recipe[]" også slettes længere nede hvor jeg har kommenteret
 
 
 export async function getStaticPaths() {
-  const url = 'https://your.supabase.url/rest/v1/Studio-citron-recipes';
- const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
+// const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes?select=some_column,other_table(foreign_key)';
+const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes';
+const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
 
-  const response = await fetch(url, {
-    headers: { apikey: key }
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const request = await fetch(url, options);
+  const data: Recipe[] = await request.json(); //her har jeg indsat ": Recipe[]" - man kan også se det når man hover over den kommer defineret datatyper
+  // const data = await request.json();  <-- den skal se sådan ud istedet hvis i vælger at slette det
+
+  return data.map((data) => {
+    return {
+      params: { id: data.id },
+      props: { data },
+    };
   });
-
-  const recipes = await response.json();
-
-  return recipes.map(recipe => ({
-    params: { id: recipe.id.toString() },
-  }));
 }
 
-const { id } = Astro.params;
+const { data } = Astro.props;
 
-const url = `https://your.supabase.url/rest/v1/Studio-citron-recipes?id=eq.${id}`;
- const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
-
-const response = await fetch(url, {
-  headers: { apikey: key }
-});
-
-const [recipe] = await response.json(); // OK if response is an array
 ---
+
 <Layout>
-  <h1>{recipe.name}</h1>
-  <p>Time: {recipe.time} min</p>
-  <p>Servings: {recipe.servings}</p>
-  <img src={recipe['main image']} alt={recipe.name} />
-</Layout>
-
-
-
-
-<!-- <Layout>
-    <div>
-    <h2> {data.name} </h2>
-    <h3>Time: {data.time} min.</h3>
-    <h3>Servings: {data.servings} Portions</h3>
-    </div>
-
     <div>
     <img src={data['main image']} alt={data.name} />
     </div>
-</Layout> -->
+
+    <h2> {data.name} </h2>
+    <h3>Seasons:  {data.season}</h3>
+    <p>{data.description}</p>
+
+    <div>    
+    <h3>Time: {data.time} min.</h3>
+    <h3>Servings: {data.servings} portions</h3>
+    </div>
+
+
+  <section class="container">
+
+  <div>
+    <h3>Ingredients</h3>
+    <div class="ingredientlist">
+      <ul>
+        {data.measurements.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>   
+
+      <ul >
+        {data.ingredients.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="method">
+    <h3>Method</h3>
+    <ol>
+      {data.method.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ol>  
+  </div>
+    
+  </section>
+
+</Layout>
+
+<style>
+  img {
+    height: 400px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .ingredientlist {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  /* .method {
+    margin-inline: 4rem;
+  } */
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+
+  }
+
+    @media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+}
+</style>
