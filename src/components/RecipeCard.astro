@@ -1,47 +1,54 @@
 ---
-const {data} = Astro.props;
+const { data } = Astro.props;
 ---
 
 <article>
+  <a href={`/single-recipe/${data.id}`}>
 
-<a href={`/single-recipe/${data.id}`}>{data.name}</a>
-
-<div class="øverst">
+  <div class="øverst">
     <div>
-    <h2> {data.name} </h2>
-    <h3>Time: {data.time} min.</h3>
-    <h3>Servings: {data.servings} Portions</h3>
+      <h2>{data.name}</h2>
+      <h3>Time: {data.time} min.</h3>
+      <h3>Servings: {data.servings} Portions</h3>
     </div>
 
     <div>
-    <img src={data['main image']} alt={data.name} />
+      <img src={data["main image"]} alt={data.name} />
     </div>
-</div>
-   
-<div class="nederst">
+  </div>
+
+  <div class="nederst">
     <div>
-    <h3>Seasons: <br> {data.season}</h3>
+      <h3>Seasons: <br /> {data.season}</h3>
     </div>
 
     <div>
-    <p>{data.description}</p>
+      <p>{data.description}</p>
     </div>
-</div>
-   </a>
-
+  </div>
+  </a>
 </article>
 
 <style>
-    .øverst, .nederst {
-        display: flex;
-        justify-content: space-between;
-        gap: 2rem;
-    }
+  .øverst,
+  .nederst {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
 
-    .nederst {
+  .nederst {
     align-items: flex-end;
-    }
-    img, p {
-        width: 250px;
-    }
+  }
+  p {
+    width: 300px;
+  }  
+  
+  img {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    /* display: block; */
+  }
+
 </style>
