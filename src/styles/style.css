@@ -2,7 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    background-color: var(--color-background);
+}
+
+html {
+      background-color: var(--color-background);
 
 }
 
@@ -23,6 +26,7 @@ main {
     --color-accent1: #607740;
     --color-brown:#7F5E3A;
     --color-darkgreen:#858854;
+    --color-salmonpink: #ffdcc1;
 }
 
 /* fonts 
