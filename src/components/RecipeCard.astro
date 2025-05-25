@@ -8,8 +8,11 @@ const { data } = Astro.props;
   <div class="øverst">
     <div>
       <h2>{data.name}</h2>
+
+      <div class="time_servings">
       <h3>Time: {data.time} min.</h3>
       <h3>Servings: {data.servings} Portions</h3>
+      </div>
     </div>
 
     <div>
@@ -19,7 +22,7 @@ const { data } = Astro.props;
 
   <div class="nederst">
     <div>
-      <h3>Seasons: <br /> {data.season}</h3>
+      <h3 class="seasons">Seasons: <br /> {data.season.join(', ')}</h3>
     </div>
 
     <div>
@@ -40,9 +43,23 @@ const { data } = Astro.props;
   .nederst {
     align-items: flex-end;
   }
+.time_servings {
+    padding-top: 1rem;
+    line-height: 2rem;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+  h2 {
+    font-size: 1.7rem;
+  }
   p {
     width: 300px;
   }  
+
+  .seasons {
+    text-transform: uppercase;  
+    }
   
   img {
     width: 300px;

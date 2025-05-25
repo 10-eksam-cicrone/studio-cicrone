@@ -10,7 +10,7 @@ html {
 }
 
 main {
-    margin: 4rem;
+    margin: 0 4rem;
 }
 
   @media (max-width: 768px) {
@@ -56,8 +56,14 @@ h1 {
     color: var(--color-primary);
 }
 
-h2, h3, h4, p {
-      font-family: "Hedvig Letters Serif", serif;
+h2, h3, h4, p,li {
+    font-family: "Hedvig Letters Serif", serif;
+    max-width: 750px;
+
+}
+
+h2{
+  font-size: 2rem;
 }
 
 p {

@@ -7,6 +7,7 @@ type Recipe = {
   name: string;
   season: string[];
   description: string;
+  polaroid: string;
   time: number;
   servings: number;
   measurements: string[];
@@ -51,22 +52,46 @@ const { data } = Astro.props;
 
 
 <Layout>
-    <div>
+    <!-- <div class="main_more_imgs">
     <img src={data.main_image} alt={data.name} />
-    </div>
+       {data.more_images.map((url) => (
+        <img src={url} alt={data.name} />
+      ))} 
+      {Array.isArray(data.more_images) && data.more_images.map((url) => (
+      <img src={url} alt={data.name} />
+      ))}
+      </div> -->
+<div class="image-gallery-wrapper">
+  <button class="scroll-btn left" onclick="scrollGallery('left')">←</button>
+
+  <div class="image-gallery" id="imageGallery">
+    <img src={data.main_image} alt={data.name} />
+    {Array.isArray(data.more_images) &&
+      data.more_images.map((url) => (
+        <img src={url} alt={data.name} />
+      ))}
+  </div>
+
+  <button class="scroll-btn right" onclick="scrollGallery('right')">→</button>
+</div>
 
     <h2> {data.name} </h2>
-    <h3>Seasons:  {data.season}</h3>
-    <p>{data.description}</p>
 
-    <div>    
+ <section class="grid_4"> <!--rækkefølgen er fra mobilversion, men de er placeret specifikt med grid i css -->
+   <h3 class="seasons">Seasons: {data.season.join(', ')}</h3>
+
+    <p class="description">{data.description}</p>
+      
+    <div class="time_servings">    
     <h3>Time: {data.time} min.</h3>
     <h3>Servings: {data.servings} portions</h3>
     </div>
 
+    <img class="polaroid" src={data.polaroid} alt={data.name} />
+
+</section>
 
   <section class="container">
-
   <div>
     <h3>Ingredients</h3>
     <div class="ingredientlist">
@@ -98,37 +123,178 @@ const { data } = Astro.props;
 </Layout>
 
 <style>
+  section {
+    margin: 3rem 5rem;
+  }
+
+  .main_more_imgs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  h2{
+    margin-left: 5rem;
+  }
+
+  h3{
+    font-size: 1.6rem;
+  }
   img {
     height: 400px;
   }
 
   ul {
     list-style: none;
+    line-height: 2.6rem;
   }
 
+  ol {
+    line-height: 2rem;
+  }
+ol li::marker {
+  font-size: 2rem; 
+  font-weight: bold;  
+}
+li {
+  font-size: 1.2rem;
+}
   .ingredientlist {
     display: flex;
     flex-direction: row;
     gap: 3rem;
   }
 
-  /* .method {
-    margin-inline: 4rem;
-  } */
+  .method {
+    max-width: 750px;
+  }
+
+    .grid_4 {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      gap: 2rem;
+  }
+
+    .description {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      max-width: 600px;
+      font-size: 1.3rem;
+    }
+
+    .polaroid {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      margin-inline: 2rem;
+    }
+      .time_servings {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      display: flex;
+      justify-content: space-around;
+    }
+    
+.polaroid {
+  background: white;
+  padding: 20px 20px 50px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* border-radius: 4px; */
+  /* text-align: center; */
+  max-height: 350px;
+  width: fit-content;
+
+  /* Tilt */
+  transform: rotate(3deg);
+  transition: transform 0.3s ease; 
+}
+
+.polaroid:hover {
+  transform: rotate(-3deg); /* hover effekt så den drejer */
+}
+
 
   .container {
     display: flex;
     flex-direction: row;
     gap: 5rem;
-
   }
 
     @media (max-width: 768px) {
+      section, h2 {
+        margin: 0;
+      }
   .container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
   }
+
+    .grid_4 {
+    grid-template-rows: auto auto auto;
+  }
+    .seasons {
+      grid-row: 1/2;
+      grid-column: 1/3;
+    }
+    .description {
+    grid-row: 2/3;
+      grid-column: 1/3;
+    }
+
+    .time_servings {
+      grid-column: 1/2;
+      grid-row: 3/4;
+      flex-direction: column;
+    }
+
+    .polaroid {
+      grid-column: 2/3;
+      grid-row: 3/4;
+    }
 }
+
+.image-gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem;
+}
+.scroll-btn {
+  background: none;
+  border: none;
+  /* padding: 0; */
+  font-size: 2rem; 
+  cursor: pointer;
+  color: inherit; 
+}
+
+.scroll-btn.left {
+  margin-right: 0.5rem;
+}
+
+.scroll-btn.right {
+  margin-left: 0.5rem;
+}
+
 </style>
+
+<!-- <script>
+  function scrollGallery(direction) {
+    const gallery = document.getElementById('imageGallery');
+    const scrollAmount = 220; // width of one image + gap
+
+    if (direction === 'left') {
+      gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
+</script> -->
