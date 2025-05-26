@@ -6,9 +6,57 @@ import Layout from '../layouts/Layout.astro';
 
     <h1>About</h1>
 
-    <section>
-        <div></div>
-        <div><img src="../" alt=""></div>
-        <div></div>
+    <section class="section_about_1">
+        <div class="img_div"><img src="/public/assets/imgs_about/age.png" alt="Peach image"></div>
+        <div class="text_div"><p class="text_about_1">Our target audience is anyone with a curiosity for food. 
+            From those seeking a dedicated caterer, to home cooks looking for recipes </p></div>
     </section>
+
+    <section>
+        <h2>OUR MISSION</h2>
+        <p>Studio Cicróne is a culinary studio founded and run by siblings Sophia and Frederik. We focus on plant-based, organic food that supports both human health and the environment. Combining hands-on cooking practice with a deep understanding of food systems, we create meaningful food experiences that nurture people and the planet alike.
+            Rooted in our background in Food Studies and the rich traditions of our family kitchen, we see cooking as a powerful way to bring people together, reconnect with nature, and celebrate the natural rhythms of the seasons. For us, food has always been more than nourishment — it is joy, creativity, and discovery. Growing up cooking since childhood, family kitchens became our playgrounds for experimenting with recipes, baking, and working with what was in season.
+            
+            After living in different countries for nearly a decade, we have reunited in Copenhagen, excited to share not only our passion for thoughtful, wholesome food but also our practical skills and genuine love for creating memorable culinary experiences.
+            At Studio Citron, we offer more than meals — we offer experiences that educate, inspire, and build community. Whether through workshops, seasonal recipes, retreats, or catering, every dish and event reflects our commitment to quality, sustainability, and the simple joy of sharing a meal.
+            What makes us unique is our belief that food is not just about taste, but about connection — to each other, to nature, and to the way we live.</p>
+    </section>
+
 </Layout>
+
+<style>
+
+    
+
+.section_about_1 {
+    display: flex;
+    margin: 0px 0px 60px 0px;
+}
+
+img {
+    display: flex;
+  height: 235px;
+  padding-right: 20px;
+}
+
+.text_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text_about_1{
+    font-size: 14px;
+    border-left: 3px solid black;
+    padding: 0px 0px 0px 10px;
+}
+
+h2{
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 2.5rem;
+    color: #012FA8;
+    font-weight: 300;
+}
+
+</style>
