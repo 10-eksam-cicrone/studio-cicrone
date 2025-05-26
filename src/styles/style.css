@@ -5,28 +5,26 @@
 }
 
 html {
-      background-color: var(--color-background);
-
+  background-color: var(--color-background);
 }
 
 main {
-    margin: 0 4rem;
+  margin: 0 4rem;
 }
 
-  @media (max-width: 768px) {
-    /* main {
+@media (max-width: 768px) {
+  /* main {
     margin: 1rem;
   } */
 }
 
 :root {
-    --color-background: #FFFDF2;
-    --color-primary: #012FA8;
-    --color-secondary: #0c7bd6;
-    --color-accent1: #607740;
-    --color-brown:#7F5E3A;
-    --color-darkgreen:#858854;
-    --color-salmonpink: #ffdcc1;
+  --color-background: #fffdf2;
+  --color-primary: #012fa8;
+  --color-secondary: #0c7bd6;
+  --color-accent1: #607740;
+  --color-darkgreen: #858854;
+  --color-salmonpink: #ffdcc1;
 }
 
 /* fonts 
@@ -49,20 +47,23 @@ font-weight: 400;
 */
 
 h1 {
-    font-family: salthouse, sans-serif;
-    font-size: 6rem;
-    text-align: center;
-    padding: 2rem;
-    color: var(--color-primary);
+  font-family: salthouse, sans-serif;
+  font-size: 6rem;
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-primary);
 }
 
-h2, h3, h4, p,li {
-    font-family: "Hedvig Letters Serif", serif;
-    max-width: 750px;
-
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: "Hedvig Letters Serif", serif;
+  max-width: 750px;
 }
 
-h2{
+h2 {
   font-size: 2rem;
 }
 
