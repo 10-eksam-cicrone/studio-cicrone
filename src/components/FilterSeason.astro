@@ -21,20 +21,25 @@
 
   .filter-btn {
     background: none;
-    border: 2px solid var(--color-darkgreen);
+    border: 2px solid var(--color-primary);
     border-radius: 30px;
     padding: 0.5rem 1rem;
     text-transform: uppercase;
     cursor: pointer;
     font-family: "Hedvig Letters Serif", serif;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out, color 0.4s ease-in-out;
+
   }
 
   .filter-btn:hover {
     background: var(--color-salmonpink);
+    color: var(--color-primary);
   }
 
   .filter-btn.active {
-    background-color: var(--color-salmonpink);
+    background-color: var(--color-secondary);
+    color: white;
   }
 
   @media (max-width: 768px) {
