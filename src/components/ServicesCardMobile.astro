@@ -1,0 +1,67 @@
+---
+// Props
+const { title, imageSrc, text, } = Astro.props;
+import ContactButton from './ContactButton.astro';
+---
+
+<article class="card">
+
+  <div class="card-content">
+    <h2 class="card-title">{title}</h2>
+    <div class="imagewrapper">
+    <img src={imageSrc} alt={title} class="card-image"/>
+    <ContactButton></ContactButton></div>
+    <p class="card-text">{text}</p>
+  </div>
+
+</article>
+
+<style>
+  .card {
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    max-width: 400px;
+    font-family: sans-serif;
+    margin-bottom: 100px;
+  }
+
+.imagewrapper {
+  position: relative;
+}
+
+/* Make the image responsive */
+.imagewrapper img {
+  width: 100%;
+  height: auto;
+}
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .card-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+    color: #012FA8;
+    margin: 0 0 0.5rem;
+    padding-bottom: 30px;
+  }
+
+  .card-text {
+    padding-top: 30px;
+    font-size: 1rem;
+    line-height: 33px;
+    font-weight: 300;
+    color:#012FA8 ;
+  }
+
+  @media (min-width: 768px) {
+    .card{
+        display: none;
+    }
+  }
+
+
+</style>
