@@ -25,14 +25,18 @@ const { data } = Astro.props;
       <h3 class="seasons">Seasons: <br /> {data.season.join(', ')}</h3>
     </div>
 
-    <div>
-      <p>{data.description}</p>
-    </div>
+<div class="line">
+  <p>{data.description}</p>
+  <span class="arrow-bottom"></span>
+</div>
+
+
   </div>
   </a>
 </article>
 
 <style>
+
   .øverst,
   .nederst {
     display: flex;
@@ -54,7 +58,7 @@ const { data } = Astro.props;
     font-size: 1.7rem;
   }
   p {
-    width: 300px;
+    width: 290px;
   }  
 
   .seasons {
@@ -67,4 +71,47 @@ const { data } = Astro.props;
     object-fit: cover;
     /* display: block; */
   }
+
+ .line {
+  position: relative;
+  display: inline-block;
+  padding-right: 10px; /* make space for line and arrows */
+}
+
+/* Vertical line */
+.line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  width: 1px;
+  background-color: var(--color-secondary);
+}
+
+/* Top arrow (downward ▼) */
+.line::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: 0.5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--color-secondary);
+}
+
+/* Bottom arrow (upward ▲) as a real element */
+.arrow-bottom {
+  position: absolute;
+  bottom: -4px;
+  right: 1px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 6px solid var(--color-secondary);
+}
+
 </style>

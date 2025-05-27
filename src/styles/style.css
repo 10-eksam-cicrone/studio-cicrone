@@ -8,9 +8,9 @@ html {
   background-color: var(--color-background);
 }
 
-main {
+/* main {
   margin: 0 0rem;
-}
+} */
 
 @media (max-width: 768px) {
   /* main {
