@@ -1,0 +1,50 @@
+---
+// Props
+const { title, imageSrc, text, } = Astro.props;
+import ContactButton from './ContactButton.astro';
+---
+
+
+<article class="card">
+
+    <div class="card-content">
+        <div><img src={imageSrc} alt={title} class="card-image"/></div>
+      <div><h2 class="card-title">{title}</h2>
+      <p class="card-text">{text}</p></div>
+      <ContactButton></ContactButton>
+    </div>
+  
+  </article>
+
+<style>
+
+@media (max-width: 768px) {
+   .card{
+    display:none
+   }
+}
+
+
+@media (min-width: 768px) {
+    .card{
+        display: flex;
+    }
+
+    .card-content{
+        display: flex;
+    }
+
+    .card-image{
+        
+    }
+
+
+
+
+
+
+
+
+  }
+
+</style>
