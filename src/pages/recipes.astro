@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import RecipeCard from '../components/RecipeCard.astro';
+import FilterSeason from '../components/FilterSeason.astro';
 
 // data indhentet fra Supabase:
 const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes'
@@ -23,11 +24,18 @@ console.log(data)
 
 <Layout>
 
+  <h1>Recipes</h1>
   <section>
-    <h1>Recipes</h1>
+    <FilterSeason recipes={data} />
+  </section>
 
-    <div class="cards">
-        {data.map((recipe) => <RecipeCard data={recipe} />)}
+  <section>
+   <div class="cards">
+      {data.map((recipe) => (
+        <div data-season={recipe.season.join(' ').toLowerCase()}>
+          <RecipeCard data={recipe} />
+        </div>
+      ))}
     </div>
   </section>
   
