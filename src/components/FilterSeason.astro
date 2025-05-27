@@ -1,0 +1,70 @@
+---
+// This component doesn't take props or slots – it just works on the page.
+---
+<div><h3>Filter by</h3></div>
+
+<div class="filter-wrapper">
+  <button class="filter-btn" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="spring">Spring</button>
+  <button class="filter-btn" data-filter="summer">Summer</button>
+  <button class="filter-btn" data-filter="autumn">Autumn</button>
+  <button class="filter-btn" data-filter="winter">Winter</button>
+</div>
+
+<style>
+  .filter-wrapper {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    background: none;
+    border: 2px solid var(--color-darkgreen);
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: "Hedvig Letters Serif", serif;
+  }
+
+  .filter-btn:hover {
+    background: var(--color-salmonpink);
+  }
+
+  .filter-btn.active {
+    background-color: var(--color-salmonpink);
+  }
+
+  @media (max-width: 768px) {
+    .filter-wrapper {
+      flex-direction: row;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('[data-season]');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active'); //til at se hvilken kategori der er aktivt i brug. Har sat baggrundsfarve på i .filter-btn.active så man kan se det visuelt
+
+        cards.forEach(card => {
+          const season = card.dataset.season; // like "spring summer"
+          if (filter === 'all' || season.includes(filter)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
