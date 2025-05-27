@@ -7,12 +7,12 @@ import Layout from '../layouts/Layout.astro';
     <h1>About</h1>
 
     <section class="section_about_1">
-        <div class="img_div"><img src="/public/assets/imgs_about/age.png" alt="Peach image"></div>
+        <div class="img_div"><img class="img1" src="/public/assets/imgs_about/age.png" alt="Peach image"></div>
         <div class="text_div"><p class="text_about_1">Our target audience is anyone with a curiosity for food. 
             From those seeking a dedicated caterer, to home cooks looking for recipes </p></div>
     </section>
 
-    <section>
+    <section class="section_about_2">
         <h2>OUR MISSION</h2>
         <p>Studio Cicróne is a culinary studio founded and run by siblings Sophia and Frederik. We focus on plant-based, organic food that supports both human health and the environment. Combining hands-on cooking practice with a deep understanding of food systems, we create meaningful food experiences that nurture people and the planet alike.
             Rooted in our background in Food Studies and the rich traditions of our family kitchen, we see cooking as a powerful way to bring people together, reconnect with nature, and celebrate the natural rhythms of the seasons. For us, food has always been more than nourishment — it is joy, creativity, and discovery. Growing up cooking since childhood, family kitchens became our playgrounds for experimenting with recipes, baking, and working with what was in season.
@@ -22,18 +22,49 @@ import Layout from '../layouts/Layout.astro';
             What makes us unique is our belief that food is not just about taste, but about connection — to each other, to nature, and to the way we live.</p>
     </section>
 
+    <section class="section_about_3">
+
+        <div class="profile_1">
+
+            <div class="profile-text_1">
+              <h3>Sophia or Sofia Citron “I love to cook and bake, to eat, and to play.”</h3>
+              <p>
+                Inspired by people, family, and her studies in holistic nutrition and food science, she sees cooking as a form of cultural activism —
+                a way to reconnect people with nature, support food sovereignty, and cultivate a healthy, colorful, and caring food culture.
+                She is our cake and dessert master and loves to experiment with grandma's cakes or layer chocolate ganache desserts.
+              </p>
+            </div>
+            <img src="/assets/imgs_about/about_img_2.png" alt="Sophia Citron - Owner">
+
+          </div>                
+
+          <div class="profile_2">
+
+            <div class="profile-text_2">
+              <h3>Frederik is our focaccia and sauce master</h3>
+              <p>
+                He has a gift for layering flavors and creating bold, unexpected combinations — often with a no-waste mindset. 
+                During his studies, 
+                he specialized in food waste and continues to explore creative ways to reuse ingredients and cook more sustainably
+            </p> </div>
+              <img src="/assets/imgs_about/about_img_3.png" alt="Frederik - Co-owner">
+           
+          </div>   
+
+</section>
+
 </Layout>
 
 <style>
 
-    
-
 .section_about_1 {
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0px 0px 60px 0px;
 }
 
-img {
+.img1 {
     display: flex;
   height: 235px;
   padding-right: 20px;
@@ -46,9 +77,19 @@ img {
 }
 
 .text_about_1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 14px;
+    line-height: 27.5px;
     border-left: 3px solid black;
-    padding: 0px 0px 0px 10px;
+    padding: 20px 0px 20px 10px;
+}
+
+.section_about_2 {
+  max-width: 650px;    
+  margin: 0 auto;
+  padding-bottom: 50px ;        
 }
 
 h2{
@@ -57,6 +98,110 @@ h2{
     font-size: 2.5rem;
     color: #012FA8;
     font-weight: 300;
+}
+
+.section_about_3{
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.profile_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-text_1, .profile-text_2{
+    line-height: 30px;
+}
+
+.profile-text_1 h3, .profile-text_2 h3{
+    padding-bottom: 20px;
+  }
+
+.profile_1 img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+.profile_2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile_2 img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+
+@media (min-width: 768px) {
+
+    .section_about_1 {
+        margin: 60px 0px 60px 0px; 
+    }
+    
+    .img1{
+        height: 425px;
+        padding-right: 70px;
+    }
+
+    .text_about_1{
+        font-size: 17.5px;
+  max-width: 175px;
+    }
+
+    h2{
+    padding-bottom: 20px;
+    font-size: 3.5rem;
+}
+
+.section_about_2 p{
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.profile_1 {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .profile-text_1 {
+    flex: 1;
+  }
+
+  .profile_1 img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-left: 2rem;
+  }
+
+
+.profile_2 {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+
+  .profile_2 img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-left: 2rem;
+ order: -1;
+ border-radius: 5px;
+  }
+
 }
 
 </style>
