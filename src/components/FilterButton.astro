@@ -1,0 +1,55 @@
+---
+// props: label (text), filter (string), active (boolean)
+const { label, filter, active = false, type = "button" } = Astro.props;
+---
+{type === "link" ? (
+  <a href={`#${filter}`} class={`filter-btn ${active ? 'active' : ''}`}>
+    {label}
+  </a>
+) : (
+  <button class={`filter-btn ${active ? 'active' : ''}`} data-filter={filter}>
+    {label}
+  </button>
+)}
+<!-- der er to variationer af knappen, men de bruger den samme kode; 
+ <button> er bare almindelig knap som jeg brugte i FilterSeason så man kan filtere sæsoner i recipe.
+ <a href="#id"> er ikke en decideret knap men et link som er bygget og stylet på samme måde som <button>.
+ Jeg var nødt til at tilføje link varianten pga jeg også brugte den her knap-komponent på ServicesMenu mobil-version, 
+ som skal kunne scrolle ned til den tilsvarende service-kategori man trykker på, men det kan en <button> åbenbart ikke.
+ Derfor er jeg nød til at bruge link-versionen som indebærer funktionen til at scrolle. 
+ Hvis man bare skal filtrere, kan man bruge <button>, hvis den skal kunne scrolle, så brug <a href="#id">.
+ Man bruger link-varianten ved at tilføje type="link" i komponenten. (vist i ServicesMenu)
+  -->
+
+
+<style>
+  .filter-btn {
+    background: none;
+    border: 2px solid var(--color-primary);
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+    font-family: "Hedvig Letters Serif", serif;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out, color 0.4s ease-in-out;
+  }
+
+  .filter-btn:hover {
+    background: var(--color-salmonpink);
+    color: var(--color-primary);
+  }
+
+  .filter-btn.active {
+    background-color: var(--color-secondary);
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .filter-btn {
+        font-size: 1rem;
+        padding: 0.2rem 0.7rem;
+    }
+  }
+
+</style>

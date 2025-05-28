@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import RecipeCard from '../components/RecipeCard.astro';
+import Hero from '../components/Hero.astro';
+import RecipeCardHome from '../components/RecipeCardHome.astro';
 
 const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes'
 const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
@@ -17,5 +19,7 @@ console.log(data)
 ---
 
 <Layout>
-
+  {data.slice(0, 3).map((recipe, i) => (
+    <RecipeCardHome data={recipe} imageLeft={i % 2 === 0} />
+  ))}
 </Layout>

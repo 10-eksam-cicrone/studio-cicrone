@@ -1,0 +1,159 @@
+---
+import FilterButton from './FilterButton.astro';
+---
+<div class="mobile-services-menu">
+  <FilterButton label="Catering" filter="catering" type="link" />
+  <FilterButton label="Events" filter="events" type="link" />
+  <FilterButton label="Retreats" filter="retreats" type="link" />
+  <FilterButton label="Workshops" filter="workshops" type="link" />
+  <FilterButton label="Recipes" filter="recipes" type="link" />
+  <FilterButton label="Nutrition" filter="nutrition" type="link" />
+  <FilterButton label="Consulting" filter="consulting" type="link" />
+</div>
+
+<section class="services-menu">
+  <a href="#catering" class="service-item">
+    <h3>Catering</h3>
+    <div class="image-wrapper">
+      <img src="/assets/imgs_services/services_card_image1.png" alt="Catering" />
+      <div class="text-overlay">Seasonal, organic catering for events of all sizes, rooted in low-waste, nourishing food practices.</div>
+    </div>
+  </a>
+   
+  <a href="#events" class="service-item">
+    <h3>Events</h3>
+    <div class="image-wrapper">
+      <img src="/assets/imgs_services/services_card_image2.png" alt="Catering" />
+      <div class="text-overlay">Thoughtfully curated events centered around plant-based food, creativity, and local, seasonal details.</div>
+    </div>
+  </a>  
+ 
+  <a href="#retreat" class="service-item">
+    <h3>Retreats</h3>
+    <div class="image-wrapper">
+      <img src="/assets/imgs_services/services_card_image3.png" alt="Catering" />
+      <div class="text-overlay">Nourishing meals for retreats that support rest, balance, and wellbeing with wholesome, organic food.</div>
+    </div>
+  </a>  
+  
+  <a href="#workshops" class="service-item">
+    <h3>Workshops</h3>
+    <div class="image-wrapper">
+      <img src="/assets/imgs_services/services_card_image4.png" alt="Catering" />
+      <div class="text-overlay">Cooking workshops that teach real skills with natural ingredients, for all levels.</div>
+    </div>
+  </a>  
+  
+  <a href="#recipes" class="service-item">
+    <h3>Recipes</h3>
+    <div class="image-wrapper">
+      <img src="/assets/imgs_services/services_card_image6.png" alt="Catering" />
+      <div class="text-overlay">Recipe development for brands and chefs, focused on honest, seasonal, and nourishing food storytelling.</div>
+    </div>
+  </a>  
+  
+  <a href="#catering" class="service-item">
+    <h3>Nutrition</h3>
+    <div class="image-wrapper">
+      <img src="/assets/imgs_services/services_card_image7.png" alt="Catering" />
+      <div class="text-overlay">Holistic food support for women’s health, from hormone balance to fertility and overall wellbeing.</div>
+    </div>
+  </a>
+    
+  <a href="#catering" class="service-item">
+    <h3>Consulting</h3>
+    <div class="image-wrapper">
+      <img src="/assets/imgs_services/services_card_image1.png" alt="Catering" />
+      <div class="text-overlay">Sustainable food consulting to help individuals and businesses make greener, values-aligned choices.</div>
+    </div>
+  </a>
+</section>
+
+<style>
+
+h3 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    transition: color 0.4s ease, font-size 0.4s ease;
+}
+
+h3:hover {
+    color: var(--color-secondary);
+    font-size: 1.4rem;
+}
+
+.service-item:hover h3 {
+  color: var(--color-secondary);
+  font-size: 1.4rem;
+  transition: 0.4s ease;
+}
+
+    .services-menu {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.service-item {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 150px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.image-wrapper:hover img {
+  height: 310px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.text-overlay {
+  position: absolute;
+   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+}
+
+.image-wrapper:hover .text-overlay {
+  opacity: 1;
+}
+
+.mobile-services-menu {display: none;}
+
+@media (max-width: 768px) {
+  .services-menu {
+    display: none;
+  }
+
+.mobile-services-menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+}
+
+</style>

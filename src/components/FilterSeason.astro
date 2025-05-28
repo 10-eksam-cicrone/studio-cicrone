@@ -1,17 +1,31 @@
 ---
-// This component doesn't take props or slots – it just works on the page.
+import FilterButton from './FilterButton.astro';
 ---
-<div><h3>Filter by</h3></div>
+<div class="filter">
+<h3>Filter seasons</h3>
 
-<div class="filter-wrapper">
-  <button class="filter-btn" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="spring">Spring</button>
-  <button class="filter-btn" data-filter="summer">Summer</button>
-  <button class="filter-btn" data-filter="autumn">Autumn</button>
-  <button class="filter-btn" data-filter="winter">Winter</button>
+<div class="filter-wrapper uppercase">
+  <FilterButton label="ALL" filter="all" />
+  <FilterButton label="SPRING" filter="spring" />
+  <FilterButton label="SUMMER" filter="summer" />
+  <FilterButton label="AUTUMN" filter="autumn" />
+  <FilterButton label="WINTER" filter="winter" />
+</div>
 </div>
 
 <style>
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--color-secondary);
+  font-weight: 400;
+}
   .filter-wrapper {
     display: flex;
     gap: 1rem;
@@ -19,23 +33,28 @@
     justify-content: center;
   }
 
-  .filter-btn {
+  /* .filter-btn {
     background: none;
-    border: 2px solid var(--color-darkgreen);
+    border: 2px solid var(--color-primary);
     border-radius: 30px;
     padding: 0.5rem 1rem;
     text-transform: uppercase;
     cursor: pointer;
     font-family: "Hedvig Letters Serif", serif;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out, color 0.4s ease-in-out;
+
   }
 
   .filter-btn:hover {
     background: var(--color-salmonpink);
+    color: var(--color-primary);
   }
 
   .filter-btn.active {
-    background-color: var(--color-salmonpink);
-  }
+    background-color: var(--color-secondary);
+    color: white;
+  } */
 
   @media (max-width: 768px) {
     .filter-wrapper {
