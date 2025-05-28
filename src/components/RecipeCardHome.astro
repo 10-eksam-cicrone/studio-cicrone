@@ -1,0 +1,64 @@
+---
+const { data, imageLeft = true } = Astro.props;
+---
+
+<article class="card">
+  <a href={`/single-recipe/${data.id}`} class="card-content">
+    <div class={`image ${imageLeft ? 'order-1' : 'order-2'}`}>
+      <img src={data.main_image} alt={data.name} />
+    </div>
+
+    <div class={`text ${imageLeft ? 'order-2' : 'order-1'}`}>
+      <div class="time_servings">
+        <h3>Time: {data.time} min.</h3>
+        <h3>Servings: {data.servings} portions</h3>
+      </div>
+      <h2>{data.name}</h2>
+      <p>{data.description}</p>
+    </div>
+  </a>
+</article>
+
+<style>
+.card {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+}
+
+.image img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  flex: 1;
+  text-align: center;
+}
+
+/* Reorder logic */
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .card-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
