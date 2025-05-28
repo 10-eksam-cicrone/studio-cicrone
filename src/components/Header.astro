@@ -1,5 +1,5 @@
 ---
-
+const currentPath = Astro.url.pathname;
 ---
 
 <header>
@@ -8,10 +8,10 @@
   </div>
 
   <nav>
-   <a href="/">Home</a>
-  <a href="/services">Services</a>
-  <a href="/recipes">Recipes</a>
-  <a href="/about">About</a>
+    <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
+    <a href="/services" class={currentPath === '/services' ? 'active' : ''}>Services</a>
+    <a href="/recipes" class={currentPath === '/recipes' ? 'active' : ''}>Recipes</a>
+    <a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a>
   </nav>
 
   <div class="burger" aria-label="Toggle menu">
@@ -22,11 +22,12 @@
 </header>
 
 <div class="mobile-menu">
-  <a href="/">Home</a>
-  <a href="/services">Services</a>
-  <a href="/recipes">Recipes</a>
-  <a href="/about">About</a>
+  <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
+  <a href="/services" class={currentPath === '/services' ? 'active' : ''}>Services</a>
+  <a href="/recipes" class={currentPath === '/recipes' ? 'active' : ''}>Recipes</a>
+  <a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a>
 </div>
+
 
 <style>
 a {
@@ -72,6 +73,11 @@ nav {
     gap: 1rem;
     margin-top: 1rem;
   }
+
+  nav a.active,
+.mobile-menu a.active {
+color: var(--color-secondary);}
+
 
   @media (max-width: 768px) {
     nav {
