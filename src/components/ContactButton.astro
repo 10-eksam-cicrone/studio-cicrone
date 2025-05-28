@@ -1,6 +1,8 @@
+---
+const {style, link} = Astro.props;
+---
 
-
-<button>CONTACT</button>
+<button onclick={`window.location.href='${link}'`} style={style}> CONTACT </button>
 
 <style>
   button {
@@ -17,11 +19,19 @@
     font-weight: bold;
     font-family: "Jost", sans-serif;
 font-weight: 600;
-position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+ }
+
+  @media (min-width: 768px) {
+    button {
+    margin-top: 30px;
+font-weight: 600;
+position:initial;
+  top: none;
+  left: none;
+  transform: none;
+  -ms-transform: none;
+
+  }
   }
 </style>
 

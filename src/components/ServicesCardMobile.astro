@@ -10,7 +10,7 @@ import ContactButton from './ContactButton.astro';
     <h2 class="card-title">{title}</h2>
     <div class="imagewrapper">
     <img src={imageSrc} alt={title} class="card-image"/>
-    <ContactButton></ContactButton></div>
+    <ContactButton  style="position: absolute; top: 80%;left: 50%;transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);"></ContactButton></div>
     <p class="card-text">{text}</p>
   </div>
 
@@ -30,7 +30,6 @@ import ContactButton from './ContactButton.astro';
   position: relative;
 }
 
-/* Make the image responsive */
 .imagewrapper img {
   width: 100%;
   height: auto;
@@ -54,10 +53,10 @@ import ContactButton from './ContactButton.astro';
     font-size: 1rem;
     line-height: 33px;
     font-weight: 300;
-    color:#012FA8 ;
+    color:#012FA8;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1000px) {
     .card{
         display: none;
     }

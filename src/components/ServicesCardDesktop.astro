@@ -1,50 +1,78 @@
 ---
 // Props
-const { title, imageSrc, text, } = Astro.props;
+const { title, imageSrc, text, id, class: customClass = "" } = Astro.props;
 import ContactButton from './ContactButton.astro';
 ---
 
-
-<article class="card">
-
-    <div class="card-content">
-        <div><img src={imageSrc} alt={title} class="card-image"/></div>
-      <div><h2 class="card-title">{title}</h2>
-      <p class="card-text">{text}</p></div>
-      <ContactButton></ContactButton>
+<a href={id}>
+<article class={`card ${customClass}`}>
+  <div class="card-content">
+    <div class="image-box">
+      <img src={imageSrc} alt={title} class="card-image" />
     </div>
-  
-  </article>
+    <div class="card-layout-desktop">
+      <h2 class="card-title">{title}</h2>
+      <p class="card-text">{text}</p>
+      <ContactButton style=""></ContactButton>
+    </div>
+  </div>
+</article>
+</a>
 
 <style>
-
-@media (max-width: 768px) {
-   .card{
-    display:none
-   }
+    
+@media (max-width: 1000px) {
+  .card {
+    display: none;
+  }
 }
 
-
-@media (min-width: 768px) {
-    .card{
-        display: flex;
-    }
-
-    .card-content{
-        display: flex;
-    }
-
-    .card-image{
-        
-    }
-
-
-
-
-
-
-
-
+@media (min-width: 1000px) {
+  .card {
+    font-family: sans-serif;
+    max-width: 950px;
+    margin: 130px auto;
   }
 
+  .card-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+  }
+
+  .card.reverse .image-box {
+    order: 2;
+  }
+
+  .card.reverse .text-box {
+    order: 1;
+  }
+
+  .card-image {
+    height: 100%;
+    width: 400px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  .card-layout-desktop {
+margin: 0 auto;
+    max-width: 500px;
+    padding-top: 70px;
+  }
+
+  .card-text {
+    font-size: 22px;
+    font-weight: 100;
+    line-height: 35px;
+    padding-top: 20px;
+    max-width: 450px;
+  }
+
+  .card-title {
+    text-align: center;
+    font-weight: 200;
+    color: #012FA8;
+  }
+}
 </style>
