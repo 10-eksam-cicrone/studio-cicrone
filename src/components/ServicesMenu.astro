@@ -1,3 +1,16 @@
+---
+import FilterButton from './FilterButton.astro';
+---
+<div class="mobile-services-menu">
+  <FilterButton label="Catering" filter="catering" type="link" />
+  <FilterButton label="Events" filter="events" type="link" />
+  <FilterButton label="Retreats" filter="retreats" type="link" />
+  <FilterButton label="Workshops" filter="workshops" type="link" />
+  <FilterButton label="Recipes" filter="recipes" type="link" />
+  <FilterButton label="Nutrition" filter="nutrition" type="link" />
+  <FilterButton label="Consulting" filter="consulting" type="link" />
+</div>
+
 <section class="services-menu">
   <a href="#catering" class="service-item">
     <h3>Catering</h3>
@@ -129,11 +142,18 @@ h3:hover {
   opacity: 1;
 }
 
+.mobile-services-menu {display: none;}
 
 @media (max-width: 768px) {
   .services-menu {
     display: none;
   }
+
+.mobile-services-menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 }
 
 </style>
