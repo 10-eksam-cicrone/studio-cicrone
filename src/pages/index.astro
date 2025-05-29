@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import RecipeCard from '../components/RecipeCard.astro';
 import Hero from '../components/Hero.astro';
 import RecipeCardHome from '../components/RecipeCardHome.astro';
+import EventSection from '../components/EventSection.astro';
 
 const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes'
 const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
@@ -19,7 +20,128 @@ console.log(data)
 ---
 
 <Layout>
+
+  <Hero></Hero>
+
+  <p class="page_subtext">“Culinary studio run by sibling duo Sophia & Frederik . We cook to bring people together, reconnect with nature, and contribute to a more thoughtful food culture. We curate plant-based, organic food experiences and local products — offering workshops, seasonal recipes, retreats, and catering.”</p>
+
+  <h2>Upcoming events</h2>
+
+  <EventSection  
+  serviceType="Retreat"
+  image="/assets/imgs_index/index_card_image1.jpeg" 
+  date="september 4 – 9"
+>
+  <div slot="left">
+    <p>Receive exclusive access to the booking page.</p>
+    <img class="graphic-element" src="/public/assets/imgs_index/index_graphic-element.svg" alt="graphic element">
+  </div>
+
+  <div slot="right">
+    <h3>Cielo is heaven on earth</h3>
+    <p>Our very first retreat will take place on the beautiful island of mallorca. <br> <br>
+    </p>
+    <p class="p_mobile">  Receive exclusive access to the booking page.</p>
+  </div>
+</EventSection>
+
+<EventSection  
+serviceType="Workshop"
+image="/assets/imgs_index/index_card_image2_mobile.png" 
+date="october 13 – 16"
+class="reverse">
+
+
+<div slot="left">
+  <p>See more</p>
+  <img class="graphic-element" src="/public/assets/imgs_index/index_graphic-element.svg" alt="graphic element">
+</div>
+
+<div slot="right">
+  <h3>Cooking class at my friend's Toti Quesada</h3>
+  <p>The students cooked and drank wine and at the end we all sat down to eat the delicacies. <br> <br>
+  </p>
+  <p class="p_mobile">  See more</p>
+</div>
+
+</EventSection>
+
+
+<h2>Recent Projects</h2>
+
+<EventSection  
+serviceType="Retreat"
+image="/assets/imgs_index/index_card_image1.jpeg" 
+date="september 4 – 9"
+>
+<div slot="left">
+  <p>Receive exclusive access to the booking page.</p>
+  <img class="graphic-element" src="/public/assets/imgs_index/index_graphic-element.svg" alt="graphic element">
+</div>
+
+<div slot="right">
+  <h3>Cielo is heaven on earth</h3>
+  <p>Our very first retreat will take place on the beautiful island of mallorca. <br> <br>
+  </p>
+  <p class="p_mobile">  Receive exclusive access to the booking page.</p>
+</div>
+</EventSection>
+
+
+<h2>Our newest recipes</h2>
+
+
   {data.slice(0, 3).map((recipe, i) => (
     <RecipeCardHome data={recipe} imageLeft={i % 2 === 0} />
   ))}
 </Layout>
+
+<style>
+
+  .page_subtext{
+    font-family: ink-free, sans-serif;
+    font-size: 15.5px;
+    max-width: 325px;
+    margin: 50px auto 0px auto;
+    color: #5496EF;
+    text-align: center;
+  }
+
+  h2{
+    text-align: center;
+    margin: 75px auto 0px auto;
+    color: #012FA8;
+    font-weight: 300;
+  }
+
+h3{
+  color: #012FA8;
+  padding-bottom: 5px;
+}
+
+.graphic-element{
+  padding-top: 5px;
+  aspect-ratio: 160/25;
+}
+
+@media (min-width: 768px) {
+
+  .page_subtext{
+    font-family: ink-free, sans-serif;
+    font-size: 22px;
+    max-width: 500px;
+    margin: 100px auto;
+    color: #5496EF;
+  }
+
+  h3{
+  color: #012FA8;
+  padding-bottom: 10px;
+}
+
+.p_mobile{
+display: none;
+}
+}
+
+</style>
