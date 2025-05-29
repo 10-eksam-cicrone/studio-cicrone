@@ -1,11 +1,11 @@
 ---
-const {style, link} = Astro.props;
+const {style, link = "#contact-form"} = Astro.props;
 ---
 
-<button onclick={`window.location.href='${link}'`} style={style}> CONTACT </button>
+<a href={link} style={style} class="contact-button">CONTACT</a>
 
 <style>
-  button {
+  .contact-button {
     display: inline-block;
     padding: 0.75rem 1.25rem;
     background: #F9F2E0;
@@ -18,11 +18,12 @@ const {style, link} = Astro.props;
     list-style: none;
     font-weight: bold;
     font-family: "Jost", sans-serif;
-font-weight: 600;
+    font-weight: 600;
+    cursor: pointer;
  }
 
   @media (min-width: 768px) {
-    button {
+  .contact-button {
     margin-top: 30px;
 font-weight: 600;
 position:initial;
@@ -30,7 +31,6 @@ position:initial;
   left: none;
   transform: none;
   -ms-transform: none;
-
   }
   }
 </style>

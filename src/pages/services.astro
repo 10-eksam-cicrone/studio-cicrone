@@ -14,112 +14,108 @@ import ContactForm from '../components/ContactForm.astro';
     <p class="page_subtext">“Our passion is creating meaningful food experiences that connect people. With plant-based, organic ingredients and a focus on sustainability and collaboration, we offer events, workshops, retreats, and catering — all crafted with care and creativity.”</p>
 
 <ServicesMenu></ServicesMenu>
-  
+
+  <div id="catering">
     <MobileCards
-  
-    id="#catering"
     title="Sustainable Catering" 
     imageSrc="/assets/imgs_services/services_card_image1.png" 
     text="We offer seasonal, organic catering for events of all sizes – from intimate dinners to weddings and brand launches. Our menus are built around local ingredients and low-waste cooking, always aiming to nourish both people and the planet."
      />
 
      <DesktopCards
-  
-      id="#catering"
      title="Sustainable Catering"
      imageSrc="/assets/imgs_services/services_card_image1.png"
      text="We offer seasonal, organic catering for events of all sizes – from intimate dinners to weddings and brand launches. Our menus are built around local ingredients and low-waste cooking, always aiming to nourish both people and the planet."
    
       />
+</div>
 
+<div id="events">
      <MobileCards
-        id="#events"
      title="Events" 
      imageSrc="/assets/imgs_services/services_card_image2.png" 
      text="We host events that bring people together through food, creativity, and thoughtful details. From intimate dinners and hands-on workshops to curated gatherings and special occasions — always with plant-based, organic food, seasonal flowers, and local products at the heart."
       />
 
       <DesktopCards
-      id="#events"
   title="Events"
   imageSrc="/assets/imgs_services/services_card_image2.png"
   text="We host events that bring people together through food, creativity, and thoughtful details. From intimate dinners and hands-on workshops to curated gatherings and special occasions — always with plant-based, organic food, seasonal flowers, and local products at the heart."
   class="reverse"
 />
+</div>
 
+<div id="retreats">
       <MobileCards
-  id="#retreat"
       title="Retreats" 
       imageSrc="/assets/imgs_services/services_card_image3.png" 
       text="We provide soulful, nourishing meals for retreats that support rest, reflection, and inner balance. Our menus are filled with wholesome, healthy dishes made from seasonal, organic ingredients – designed to energize, ground, and care for both body and mind."
        />
 
        <DesktopCards
-         id="#retreat"
        title="Retreats"
        imageSrc="/assets/imgs_services/services_card_image3.png"
        text="We provide soulful, nourishing meals for retreats that support rest, reflection, and inner balance. Our menus are filled with wholesome, healthy dishes made from seasonal, organic ingredients – designed to energize, ground, and care for both body and mind."
      />
+</div>
 
+<div id="workshops">
        <MobileCards
-  id="#workshops"
        title="Cooking Workshops" 
        imageSrc="/assets/imgs_services/services_card_image4.png" 
        text="Whether you’re a beginner or experienced cook, we focus on real skills, natural ingredients, and joyful food."
         />
 
-        <a href="#workshops">
-<article>
+<article class="workshops_desktop">
 <h2>Cooking Workshops</h2>
 <img src="/assets/imgs_services/services_card_image4_2.png" alt="Cooking workshops">
 <p class="cooking_workshops_p">Whether you’re a beginner or experienced cook, we focus on real skills, natural ingredients, and joyful food.</p>
-<ContactButton style="display:block; margin: 0 auto; "></ContactButton>
-</article></a>
+<ContactButton></ContactButton>
+</article>
+</div>
 
+<div id="recipes">
         <MobileCards
-  id="#recipes"
         title="Recipe Development" 
         imageSrc="/assets/imgs_services/services_card_image5.png" 
         text="We collaborate with brands, chefs, and publications to create recipes that reflect a thoughtful, nourishing, and natural approach to food. Always seasonal, always honest – from concept to styling and storytelling."
          />
 
          <DesktopCards
-           id="#recipes"
          title="Recipe Development"
          imageSrc="/assets/imgs_services/services_card_image5.png"
          text="We collaborate with brands, chefs, and publications to create recipes that reflect a thoughtful, nourishing, and natural approach to food. Always seasonal, always honest – from concept to styling and storytelling."
          class="reverse"
        />
-
+</div>
+<div id="nutrition">
          <MobileCards
-       id="#nutrition"
          title="Nutrition" 
          imageSrc="/assets/imgs_services/services_card_image6.png" 
          text="We offer food support tailored to women’s health across all life stages – from hormonal balance to fertility and overall wellbeing. Rooted in holistic nutrition, our approach is gentle, grounded, and deeply nourishing."
           />
 
           <DesktopCards
-                 id="#nutrition"
           title="Nutrition"
           imageSrc="/assets/imgs_services/services_card_image6.png"
           text="We offer food support tailored to women’s health across all life stages – from hormonal balance to fertility and overall wellbeing. Rooted in holistic nutrition, our approach is gentle, grounded, and deeply nourishing."
         />
+</div>
 
+<div id="consulting">
           <MobileCards
-       id="#consulting"
           title="Consulting" 
           imageSrc="/assets/imgs_services/services_card_image7.png" 
           text="We offer sustainable food consulting for both businesses and individuals.  From climate-friendly menus to reducing food waste – we make greener choices easy.  Together, we find solutions that fit your kitchen and your values."
            />
 
            <DesktopCards
-             id="#consulting"
            title="Consulting"
            imageSrc="/assets/imgs_services/services_card_image7.png"
            text="We offer sustainable food consulting for both businesses and individuals.  From climate-friendly menus to reducing food waste – we make greener choices easy.  Together, we find solutions that fit your kitchen and your values."
            class="reverse"
          />
-
+</div>
          <ContactForm></ContactForm>
 
          <h3>Frequently Asked Questions</h3>
@@ -159,7 +155,9 @@ import ContactForm from '../components/ContactForm.astro';
     html{
         scroll-behavior: smooth;
     }
-
+[id] {
+  scroll-margin-top: 100px;
+}
     .page_subtext{
         font-size: 17.5px;
         max-width: 600px;
@@ -169,6 +167,7 @@ import ContactForm from '../components/ContactForm.astro';
     article{
         max-width:550px;
         margin: 30px auto;
+
     }
 
     h2{
@@ -219,7 +218,7 @@ p{
 
     article{
         min-width:650px;
-        margin: 30px auto;
+        margin: 0 auto 100px auto;
         font-size: 22px;
     }
 
