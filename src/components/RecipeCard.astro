@@ -2,8 +2,9 @@
 const { data } = Astro.props;
 ---
 
+<a href={`/single-recipe/${data.id}`}>
+
 <article>
-  <a href={`/single-recipe/${data.id}`}>
 
   <div class="øverst">
     <div>
@@ -22,7 +23,10 @@ const { data } = Astro.props;
 
   <div class="nederst">
     <div>
-      <h3 class="seasons">Seasons: <br /> {data.season.join(', ')}</h3>
+    <h3 class="seasons">
+      <span class="label">Seasons:</span><br />
+      <span class="season-data">{data.season.join(', ')}</span>
+    </h3>
     </div>
 
 <div class="line">
@@ -32,8 +36,8 @@ const { data } = Astro.props;
 
 
   </div>
-  </a>
 </article>
+  </a>
 
 <style>
 
@@ -49,27 +53,46 @@ const { data } = Astro.props;
   }
 .time_servings {
     padding-top: 1rem;
-    line-height: 2rem;
+    gap: 1vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
     /* display: flex;
     flex-direction: column;
     justify-content: space-between; */
 }
   h2 {
-    font-size: 1.7rem;
+    font-size: 1.75vw;
+    color: var(--color-darkgreen);
+    
   }
   p {
     width: 290px;
   }  
-
+h3 {
+  font-size: 1.5vw;
+}
   .seasons {
     text-transform: uppercase;  
     }
+
+    .seasons .label {
+  color: var(--color-primary); 
+  }
+
+  .seasons .season-data {
+    color: var(--color-secondary);
+  }
+
   
   img {
     width: 300px;
     height: 250px;
     object-fit: cover;
     /* display: block; */
+    margin-bottom: 5px;
+    display: flex;
+
   }
 
  .line {
@@ -93,7 +116,7 @@ const { data } = Astro.props;
 .line::before {
   content: "";
   position: absolute;
-  top: -4px;
+  top: 0px;
   right: 0.5px;
   width: 0;
   height: 0;
@@ -114,4 +137,18 @@ const { data } = Astro.props;
   border-bottom: 6px solid var(--color-secondary);
 }
 
+@media (max-width: 768px) {
+article {
+  width: 90vw;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+font-size: 1.2rem;
+}
+
+}
 </style>

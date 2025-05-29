@@ -2,7 +2,9 @@
 import FilterButton from './FilterButton.astro';
 ---
 <div class="filter">
+  <div class="title">
 <h3>Filter seasons</h3>
+</div>
 
 <div class="filter-wrapper uppercase">
   <FilterButton label="ALL" filter="all" />
@@ -17,8 +19,9 @@ import FilterButton from './FilterButton.astro';
 .filter {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 4rem;
+  flex-direction: row;
 }
 
 h3 {
@@ -33,34 +36,16 @@ h3 {
     justify-content: center;
   }
 
-  /* .filter-btn {
-    background: none;
-    border: 2px solid var(--color-primary);
-    border-radius: 30px;
-    padding: 0.5rem 1rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-family: "Hedvig Letters Serif", serif;
-    font-size: 1.2rem;
-    transition: 0.3s ease-in-out, color 0.4s ease-in-out;
-
-  }
-
-  .filter-btn:hover {
-    background: var(--color-salmonpink);
-    color: var(--color-primary);
-  }
-
-  .filter-btn.active {
-    background-color: var(--color-secondary);
-    color: white;
-  } */
-
   @media (max-width: 768px) {
     .filter-wrapper {
-      flex-direction: row;
+    flex-wrap: wrap;
     }
+  .filter {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
   }
+}
 </style>
 
 <script>
