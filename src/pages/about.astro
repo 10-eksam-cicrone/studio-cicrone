@@ -14,12 +14,10 @@ import Layout from '../layouts/Layout.astro';
 
     <section class="section_about_2">
         <h2>OUR MISSION</h2>
-        <p>Studio Cicróne is a culinary studio founded and run by siblings Sophia and Frederik. We focus on plant-based, organic food that supports both human health and the environment. Combining hands-on cooking practice with a deep understanding of food systems, we create meaningful food experiences that nurture people and the planet alike.
-            Rooted in our background in Food Studies and the rich traditions of our family kitchen, we see cooking as a powerful way to bring people together, reconnect with nature, and celebrate the natural rhythms of the seasons. For us, food has always been more than nourishment — it is joy, creativity, and discovery. Growing up cooking since childhood, family kitchens became our playgrounds for experimenting with recipes, baking, and working with what was in season.
-            
-            After living in different countries for nearly a decade, we have reunited in Copenhagen, excited to share not only our passion for thoughtful, wholesome food but also our practical skills and genuine love for creating memorable culinary experiences.
-            At Studio Citron, we offer more than meals — we offer experiences that educate, inspire, and build community. Whether through workshops, seasonal recipes, retreats, or catering, every dish and event reflects our commitment to quality, sustainability, and the simple joy of sharing a meal.
-            What makes us unique is our belief that food is not just about taste, but about connection — to each other, to nature, and to the way we live.</p>
+        <p>Studio Cicróne is a culinary studio founded by siblings Sophia and Frederik. We focus on plant-based, organic food that supports both human health and the environment. With hands-on cooking and deep food system knowledge, we craft experiences that nurture people and planet.
+Rooted in Food Studies and our family kitchen, we see cooking as a way to connect, celebrate the seasons, and explore creativity. Growing up, food was our joyful playground — experimenting, baking, and working with what was in season.
+  After years abroad, we’ve reunited in Copenhagen to share our passion, skills, and love for wholesome food. At Studio Cicróne, we offer more than meals — we offer experiences that educate, inspire, and build community. Workshops, recipes, retreats, and catering all reflect our dedication to quality, sustainability, and joyful connection.
+    For us, food isn’t just about taste — it’s about connection to each other, to nature, and to how we live.</p>
     </section>
 
     <section class="section_about_3">
@@ -33,6 +31,7 @@ import Layout from '../layouts/Layout.astro';
                 a way to reconnect people with nature, support food sovereignty, and cultivate a healthy, colorful, and caring food culture.
                 She is our cake and dessert master and loves to experiment with grandma's cakes or layer chocolate ganache desserts.
               </p>
+              <img src="public/assets/imgs_index/index_graphic-element.svg" alt="Graphic element">
             </div>
             <img src="/assets/imgs_about/about_img_2.png" alt="Sophia Citron - Owner">
 
@@ -45,10 +44,11 @@ import Layout from '../layouts/Layout.astro';
               <p>
                 He has a gift for layering flavors and creating bold, unexpected combinations — often with a no-waste mindset. 
                 During his studies, 
-                he specialized in food waste and continues to explore creative ways to reuse ingredients and cook more sustainably
-            </p> </div>
+                he specialized in food waste and continues to explore creative ways to reuse ingredients and cook more sustainably.
+            </p> 
+            <img src="public/assets/imgs_index/index_graphic-element.svg" alt="Graphic element"> 
+          </div>
               <img src="/assets/imgs_about/about_img_3.png" alt="Frederik - Co-owner">
-           
           </div>   
 
 </section>
@@ -61,7 +61,8 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0px 0px 60px 0px;
+    margin: 0px auto 60px auto;
+    max-width: 450px;
 }
 
 .img1 {
@@ -74,6 +75,7 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 150px;
 }
 
 .text_about_1{
@@ -87,14 +89,15 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .section_about_2 {
-  max-width: 650px;    
+  max-width: 350px;    
   margin: 0 auto;
-  padding-bottom: 50px ;        
+  padding-bottom: 50px ; 
+  line-height: 28.5px;       
 }
 
 h2{
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     font-size: 2.5rem;
     color: #012FA8;
     font-weight: 300;
@@ -105,13 +108,23 @@ max-width: 1100px;
 margin: 0 auto;
 }
 
-.profile_1 {
+.profile_1, .profile_2   {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
-  max-width: 1000px;
+  max-width: 500px;
   margin: 0 auto;
+}
+
+h3{
+  color: #012FA8;
+  text-align: center;
+}
+
+.profile_1 p, .profile_2 p{
+  color: #5496EF;
+  padding-bottom: 20px;
 }
 
 .profile-text_1, .profile-text_2{
@@ -123,18 +136,9 @@ margin: 0 auto;
   }
 
 .profile_1 img {
-  max-width: 100%;
+  max-width: 400px;
   height: auto;
   align-self: center;
-}
-
-.profile_2 {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .profile_2 img {
@@ -143,12 +147,16 @@ margin: 0 auto;
   align-self: center;
 }
 
-
 @media (min-width: 768px) {
 
     .section_about_1 {
         margin: 60px 0px 60px 0px; 
+        max-width: none;
     }
+
+    .text_div{
+    max-width: 200px;
+}
     
     .img1{
         height: 425px;
@@ -157,12 +165,16 @@ margin: 0 auto;
 
     .text_about_1{
         font-size: 17.5px;
-  max-width: 175px;
+  max-width: 400px;
     }
 
     h2{
-    padding-bottom: 20px;
+    padding: 70px 0;
     font-size: 3.5rem;
+}
+
+.section_about_2{
+  max-width: 650px;
 }
 
 .section_about_2 p{
@@ -170,13 +182,11 @@ margin: 0 auto;
     line-height: 40px;
 }
 
-.profile_1 {
+.profile_1, .profile_2  {
     flex-direction: row;
     align-items: flex-start;
-  }
-
-  .profile-text_1 {
-    flex: 1;
+    max-width: 900px;
+    gap: 105px;
   }
 
   .profile_1 img {
@@ -186,13 +196,6 @@ margin: 0 auto;
     margin-left: 2rem;
   }
 
-
-.profile_2 {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-
   .profile_2 img {
     width: 100%;
     max-width: 400px;
@@ -201,6 +204,17 @@ margin: 0 auto;
  order: -1;
  border-radius: 5px;
   }
+
+  .profile-text_2 img, .profile-text_1 img {
+    margin-top: 20px;
+  aspect-ratio: 112/25;
+  width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-left: 0;
+    order: 0;
+    border-radius: 0;
+}
 
 }
 
