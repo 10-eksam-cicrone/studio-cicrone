@@ -1,10 +1,10 @@
 ---
 // Props
-const { title, imageSrc, text, } = Astro.props;
+const { title, imageSrc, text, id} = Astro.props;
 import ContactButton from './ContactButton.astro';
 ---
 
-<article class="card">
+<article id={id} class="card">
 
   <div class="card-content">
     <h2 class="card-title">{title}</h2>

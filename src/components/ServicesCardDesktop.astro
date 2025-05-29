@@ -4,8 +4,7 @@ const { title, imageSrc, text, id, class: customClass = "" } = Astro.props;
 import ContactButton from './ContactButton.astro';
 ---
 
-<a href={id}>
-<article class={`card ${customClass}`}>
+<article id={id} class={`card ${customClass}`}>
   <div class="card-content">
     <div class="image-box">
       <img src={imageSrc} alt={title} class="card-image" />
@@ -13,15 +12,13 @@ import ContactButton from './ContactButton.astro';
     <div class="card-layout-desktop">
       <h2 class="card-title">{title}</h2>
       <p class="card-text">{text}</p>
-      <ContactButton style=""></ContactButton>
+      <ContactButton style="display: flex; justify-content: center;"></ContactButton>
     </div>
   </div>
 </article>
-</a>
 
 <style>
-    
-@media (max-width: 1000px) {
+    @media (max-width: 1000px) {
   .card {
     display: none;
   }
