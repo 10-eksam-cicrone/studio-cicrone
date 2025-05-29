@@ -17,9 +17,10 @@ const options = {
 const request = await fetch(url, options);
 const data = await request.json();
 console.log(data)
+
 ---
 
-<Layout>
+<Layout isHome={true}>
 
   <Hero></Hero>
 
@@ -129,7 +130,7 @@ h3{
   .page_subtext{
     font-family: ink-free, sans-serif;
     font-size: 22px;
-    max-width: 500px;
+    max-width: 600px;
     margin: 100px auto;
     color: #5496EF;
   }

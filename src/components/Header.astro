@@ -1,18 +1,23 @@
 ---
+const { isHome = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
-<header>
+<header class={isHome ? 'header-home' : ''}>
+
   <div class="logo">
     <a href="/">Studio Cicrone</a>
   </div>
 
+  <div class="navbar_borderbottom">
   <nav>
     <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
     <a href="/services" class={currentPath === '/services' ? 'active' : ''}>Services</a>
     <a href="/recipes" class={currentPath === '/recipes' ? 'active' : ''}>Recipes</a>
     <a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a>
   </nav>
+
+</div>
 
   <div class="burger" aria-label="Toggle menu">
     <span></span>
@@ -28,19 +33,39 @@ const currentPath = Astro.url.pathname;
   <a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a>
 </div>
 
-
 <style>
 a {
   font-family: "Hedvig Letters Serif", serif;
   font-size: 1.3rem;
 }  
+
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10; 
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 2rem;
-  background: var(--color-background);
+  background: transparent; 
 }
+
+.header-home{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10; 
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 3rem;
+  background: transparent; 
+    color: #fffdf2;
+}
+
 
 .logo {
   justify-self: start;
@@ -52,17 +77,22 @@ nav {
   gap: 4rem;
 }
 
+.navbar_borderbottom{
+display: flex;
+flex-direction: row;
+}
+
   .burger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    /* justify-self: end; */
+    justify-self: end;
   }
 
   .burger span {
     width: 30px;
     height: 3px;
-    background: #333;
+    background: #012FA8;
     margin: 4px 0;
     border-radius: 2px;
   }
@@ -70,8 +100,9 @@ nav {
   .mobile-menu {
     display: none;
     flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 3rem;
+    margin-top: 8rem;
+    padding-bottom: 6rem;
   }
 
   nav a.active,
