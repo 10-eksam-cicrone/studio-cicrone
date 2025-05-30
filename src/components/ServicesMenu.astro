@@ -74,7 +74,7 @@ import FilterButton from './FilterButton.astro';
 h3 {
     margin-bottom: 1rem;
     color: var(--color-primary);
-    font-size: 1.3rem;
+    font-size: 1.65vw;
     transition: color 0.4s ease, font-size 0.4s ease;
 }
 
@@ -85,7 +85,7 @@ h3:hover {
 
 .service-item:hover h3 {
   color: var(--color-secondary);
-  font-size: 1.4rem;
+  font-size: 1.75vw;
   transition: 0.4s ease;
 }
 
@@ -93,6 +93,7 @@ h3:hover {
   display: flex;
   gap: 5px;
   justify-content: center;
+  align-items: center;
   padding-bottom: 3rem;
 }
 
@@ -109,13 +110,13 @@ h3:hover {
 }
 
 .image-wrapper img {
-  width: 150px;
-  height: 300px;
+  width: 13vw;
+  height: 28vw;
   object-fit: cover;
 }
 
 .image-wrapper:hover img {
-  height: 310px;
+  height: 30vw;
   object-fit: cover;
   transition: 0.4s ease;
 }
@@ -131,7 +132,7 @@ h3:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.75vw;
   text-align: left;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -153,6 +154,8 @@ h3:hover {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  max-width: 80vw;
+  margin: 0 auto 40px auto;
 }
 }
 
