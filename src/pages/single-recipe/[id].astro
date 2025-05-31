@@ -79,13 +79,21 @@ const { data } = Astro.props;
 
  <section class="grid_4"> <!--rækkefølgen er fra mobilversion, men de er placeret specifikt med grid i css -->
    <h3 class="seasons">Seasons: {data.season.join(', ')}</h3>
-
+    
     <p class="description">{data.description}</p>
       
-    <div class="time_servings">    
+    <div class="time_servings"> 
+
+      <div class="text_icon">
+      <img class="icon" src="/assets/imgs_id/watch.svg" alt="serving">
     <h3>Time: {data.time} min.</h3>
+    </div>
+
+    <div class="text_icon">
+    <img class="icon" src="/assets/imgs_id/plate.svg" alt="serving">
     <h3>Servings: {data.servings} portions</h3>
     </div>
+</div>
 
     <img class="polaroid" src={data.polaroid} alt={data.name} />
 
@@ -93,15 +101,15 @@ const { data } = Astro.props;
 
   <section class="container">
   <div>
-    <h3>Ingredients</h3>
+    <h3 class="title">Ingredients</h3>
     <div class="ingredientlist">
-      <ul>
+      <ul class="measurements">
         {data.measurements.map((item) => (
           <li>{item}</li>
         ))}
       </ul>   
 
-      <ul >
+      <ul class="ingredients">
         {data.ingredients.map((item) => (
           <li>{item}</li>
         ))}
@@ -110,7 +118,7 @@ const { data } = Astro.props;
   </div>
 
   <div class="method">
-    <h3>Method</h3>
+    <h3 class="title">Method</h3>
     <ol>
       {data.method.map((item) => (
         <li>{item}</li>
@@ -124,7 +132,10 @@ const { data } = Astro.props;
 
 <style>
   section {
-    margin: 3rem 5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
   }
 
   .main_more_imgs{
@@ -133,11 +144,17 @@ const { data } = Astro.props;
     gap: 5px;
   }
   h2{
-    margin-left: 5rem;
+    margin-left: 12rem;
+    margin-top: 3rem;
+    color: var(--color-darkgreen);
   }
 
-  h3{
-    font-size: 1.6rem;
+  h3 {
+font-size: 1.5rem;
+  }
+  .title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
   img {
     height: 400px;
@@ -146,52 +163,85 @@ const { data } = Astro.props;
   ul {
     list-style: none;
     line-height: 2.6rem;
+    color: var(--color-primary);
+
+  }
+li {
+  font-size: 1.2rem;
+}
+
+  .ingredients{
+    color: var(--color-secondary);
   }
 
   ol {
     line-height: 2rem;
+    color: var(--color-primary);
+
   }
+
+  ol li {
+  margin-bottom: 1.4rem
+}
 ol li::marker {
   font-size: 2rem; 
-  font-weight: bold;  
+  font-weight: bold;
+  color: black;  
 }
-li {
-  font-size: 1.2rem;
-}
+
   .ingredientlist {
     display: flex;
     flex-direction: row;
     gap: 3rem;
+    font-weight: bold;
   }
 
   .method {
-    max-width: 750px;
+    max-width: 75ch;
   }
 
     .grid_4 {
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
-      gap: 2rem;
+      gap: 3rem;
   }
 
     .description {
       grid-column: 1/2;
       grid-row: 1/2;
-      max-width: 600px;
+      max-width: 45ch;
       font-size: 1.3rem;
+      padding: auto;
+      margin-left: 12rem;
+      margin-top: 3rem;
     }
 
     .polaroid {
       grid-column: 2/3;
       grid-row: 1/2;
-      margin-inline: 2rem;
+      margin-left: 10rem;
     }
       .time_servings {
       grid-column: 1/2;
       grid-row: 2/3;
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-end;
+      gap: 3rem;
+    }
+
+    .text_icon {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .seasons {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 3rem;
+            align-items: center;
+
     }
     
 .polaroid {
@@ -200,8 +250,8 @@ li {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   /* border-radius: 4px; */
   /* text-align: center; */
-  max-height: 350px;
-  width: fit-content;
+  width: 275px;
+  height: auto;
 
   /* Tilt */
   transform: rotate(3deg);
@@ -212,17 +262,32 @@ li {
   transform: rotate(-3deg); /* hover effekt så den drejer */
 }
 
-
-  .container {
+.icon {
+  width: 50px;
+  height: 50px;
+}
+  /* .container {
     display: flex;
     flex-direction: row;
-    gap: 5rem;
-  }
+    justify-content: space-around;  
+  } */
 
     @media (max-width: 768px) {
       section, h2 {
-        margin: 0;
+        margin: 1rem;
       }
+
+      p, li {
+        font-size: 1rem;
+      }
+
+      /* h3 {
+        font-size: 1rem;
+      }
+
+      .title {
+        font-size: 1.2rem;
+      }  */
   .container {
     display: flex;
     flex-direction: column;
@@ -245,11 +310,17 @@ li {
       grid-column: 1/2;
       grid-row: 3/4;
       flex-direction: column;
+      font-size: 1rem;
     }
 
+    .method {
+      margin-left: 1rem;
+    }
     .polaroid {
       grid-column: 2/3;
       grid-row: 3/4;
+        width: 200px;
+        height: 100%;
     }
 }
 
