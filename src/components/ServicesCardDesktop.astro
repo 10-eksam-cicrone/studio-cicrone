@@ -12,7 +12,9 @@ import ContactButton from './ContactButton.astro';
     <div class="card-layout-desktop">
       <h2 class="card-title">{title}</h2>
       <p class="card-text">{text}</p>
-      <ContactButton style="display: flex; justify-content: center;"></ContactButton>
+      <div class="contact-button-wrapper">
+        <ContactButton />
+      </div>
     </div>
   </div>
 </article>
@@ -27,14 +29,15 @@ import ContactButton from './ContactButton.astro';
 @media (min-width: 1000px) {
   .card {
     font-family: sans-serif;
-    max-width: 950px;
-    margin: 130px auto;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .card-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 75px;
+    gap: 125px;
+    margin: 175px 50px;
   }
 
   .card.reverse .image-box {
@@ -47,13 +50,13 @@ import ContactButton from './ContactButton.astro';
 
   .card-image {
     height: 100%;
-    width: 400px;
+    width: 500px;
     margin: 0 auto;
     object-fit: cover;
   }
 
   .card-layout-desktop {
-margin: 0 auto;
+margin: auto 0;
     max-width: 500px;
     padding-top: 70px;
   }
@@ -67,9 +70,15 @@ margin: 0 auto;
   }
 
   .card-title {
-    text-align: center;
     font-weight: 200;
     color: #012FA8;
+
   }
+
+  .contact-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 }
 </style>

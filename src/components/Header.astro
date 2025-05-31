@@ -10,7 +10,8 @@ const currentPath = Astro.url.pathname;
     <a href="/"><img src="public/assets/logo_svg/logo_4.svg" alt=""></a>
   </div>
 
-  <div class="navbar_borderbottom">
+  <div>
+
   <nav>
     <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
     <a href="/services" class={currentPath === '/services' ? 'active' : ''}>Services</a>
@@ -51,6 +52,7 @@ header {
   align-items: center;
   padding: 3rem;
   background: transparent; 
+  color: #012FA8;
 }
 
 .header-home{
@@ -76,18 +78,12 @@ align-items: center;
 
     .logo img{
         width: 55px;
-        opacity: 1;
     }
 
 nav {
   justify-self: center;
   display: flex;
   gap: 4rem;
-}
-
-.navbar_borderbottom{
-display: flex;
-flex-direction: row;
 }
 
   .burger {
@@ -128,8 +124,22 @@ flex-direction: row;
 
   nav a.active,
 .mobile-menu a.active {
-color: var(--color-secondary);}
+  position: relative;
+  color: var(--color-secondary);
+}
 
+nav a.active::after,
+.mobile-menu a.active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+}
 
   @media (max-width: 768px) {
     nav {

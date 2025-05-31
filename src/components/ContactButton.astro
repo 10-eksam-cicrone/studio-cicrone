@@ -6,6 +6,7 @@ const {style, link = "#contact-form"} = Astro.props;
 
 <style>
   .contact-button {
+    position: absolute;
     display: inline-block;
     padding: 0.75rem 1.25rem;
     background: #F9F2E0;
@@ -24,14 +25,16 @@ const {style, link = "#contact-form"} = Astro.props;
 
   @media (min-width: 768px) {
   .contact-button {
-    margin-top: 30px;
+    margin: 30px auto;
 font-weight: 600;
-position:initial;
-  top: none;
-  left: none;
-  transform: none;
-  -ms-transform: none;
+transition: 0.3s ease-in-out, color 0.4s ease-in-out;
   }
+
+  .contact-button:hover{
+    background: var(--color-salmonpink);
+    color: var(--color-primary);
+  }
+
   }
 </style>
 

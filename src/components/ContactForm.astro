@@ -9,20 +9,46 @@
     <label>Mail</label>
     <input type="email" placeholder="Mail" required />
 
+   <div class="desktop_layout">
+
+    <div class="desktop_layout_singular">
+
     <label>Service type</label>
     <input type="text" placeholder="Service type" />
+
+  </div>
+
+  <div class="desktop_layout_singular">
 
     <label>Phone number</label>
     <input type="tel" placeholder="Phone number" />
 
+  </div>
+
+  </div>
+
+  <div class="desktop_layout">
+
+    <div class="desktop_layout_singular">
+
     <label>Number of guests</label>
     <input type="number" placeholder="0" />
+
+    </div>
+
+    <div class="desktop_layout_singular">
 
     <label>Date of event</label>
     <input type="date" />
 
+    </div>
+
+  </div>
+
     <label>Message</label>
     <textarea placeholder="Write us a message"></textarea>
+
+  
 
     <button type="submit">SEND</button>
   </form>
@@ -31,7 +57,7 @@
 <style>
   .contact-form {
   background-color: #4da6ff;
-  padding: 30px;
+  padding: 40px;
   border-radius: 10px;
   max-width: 600px;
   margin: 0 auto;
@@ -69,9 +95,10 @@ textarea {
 
 button {
   margin-top: 25px;
-  padding: 12px 30px;
+  padding: 15px 50px;
+  font-size: 15px;
   background-color: #fdf1dc;
-  color: #001E5F;
+  color: #012FA8;
   font-weight: bold;
   border: none;
   border-radius: 30px;
@@ -80,6 +107,25 @@ button {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+button:hover{
+  background-color: #012FA8;
+  color: white;
+  transition: 0.3s ease-in-out, color 0.4s ease-in-out;
+}
+
+@media (min-width: 768px) {
+
+  .desktop_layout{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+  }
+
+  .desktop_layout_singular{
+    display: block;
+  }
 }
 
 </style>
