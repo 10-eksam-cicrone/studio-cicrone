@@ -1,46 +1,39 @@
 <section id="contact-form" class="contact-form">
-    <h2>Contact Form</h2>
-    <p>Give us a message about your upcoming event and we will assemble the perfect menu for you</p>
-  
-    <form>
-      <label>Name</label>
-      <input type="text" placeholder="Name" required />
-  
-      <label>Mail</label>
-      <input type="email" placeholder="Mail" required />
-  
-      <div class="form-row">
-        <div>
-          <label>Service type</label>
-          <input type="text" placeholder="Service type" />
-        </div>
-        <div>
-          <label>Phone number</label>
-          <input type="tel" placeholder="Phone number" />
-        </div>
-        <div>
-          <label>Number of guests</label>
-          <input type="number" placeholder="0" />
-        </div>
-        <div>
-          <label>Date of event</label>
-          <input type="date" />
-        </div>
-      </div>
-  
-      <label>Message</label>
-      <textarea placeholder="Write us a message"></textarea>
-  
-      <button type="submit">SEND</button>
-    </form>
-  </section>
+  <h2>Contact Form</h2>
+  <p>Give us a message about your upcoming event and we will assemble the perfect menu for you</p>
 
-  <style>
-    .contact-form {
+  <form>
+    <label>Name</label>
+    <input type="text" placeholder="Name" required />
+
+    <label>Mail</label>
+    <input type="email" placeholder="Mail" required />
+
+    <label>Service type</label>
+    <input type="text" placeholder="Service type" />
+
+    <label>Phone number</label>
+    <input type="tel" placeholder="Phone number" />
+
+    <label>Number of guests</label>
+    <input type="number" placeholder="0" />
+
+    <label>Date of event</label>
+    <input type="date" />
+
+    <label>Message</label>
+    <textarea placeholder="Write us a message"></textarea>
+
+    <button type="submit">SEND</button>
+  </form>
+</section>
+
+<style>
+  .contact-form {
   background-color: #4da6ff;
-  padding: 40px;
+  padding: 30px;
   border-radius: 10px;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   color: white;
   font-family: sans-serif;
@@ -53,43 +46,30 @@
 }
 
 .contact-form p {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 form label {
   display: block;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
 input, textarea {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 textarea {
-  min-height: 150px;
-}
-
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.form-row > div {
-  flex: 1;
-  min-width: 140px;
+  min-height: 120px;
 }
 
 button {
-  margin-top: 30px;
-  display: block;
-  padding: 12px 40px;
+  margin-top: 25px;
+  padding: 12px 30px;
   background-color: #fdf1dc;
   color: #001E5F;
   font-weight: bold;
@@ -97,56 +77,9 @@ button {
   border-radius: 30px;
   cursor: pointer;
   text-transform: uppercase;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-@media (max-width: 768px) {
-  .contact-form {
-    max-width: 90%;
-    padding: 20px;
-    margin: 0 auto;
-  }
-
-  .form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .form-row > div {
-    flex: 1 1 45%;
-    min-width: 45%;
-  }
-
-  .form-row > div:nth-child(odd) {
-    margin-right: 10px;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 15px;
-  }
-
-  textarea {
-    min-height: 120px;
-  }
-
-  button {
-    margin-top: 30px;
-    width: 60%;
-    max-width: 220px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding: 12px;
-    font-weight: bold;
-    border-radius: 20px;
-  }
-}
-
-  </style>
+</style>
