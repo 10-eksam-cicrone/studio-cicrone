@@ -24,7 +24,6 @@ type Recipe = {
 
 
 export async function getStaticPaths() {
-// const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes?select=some_column,other_table(foreign_key)';
 const url = 'https://kxsikgegiujshywvapki.supabase.co/rest/v1/Studio-citron-recipes';
 const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4c2lrZ2VnaXVqc2h5d3ZhcGtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMjg4MzgsImV4cCI6MjA2MjkwNDgzOH0.ll0T1Fz7-4kGDK76P7mG-8qzgp2nT6SIRhEeUFsjh3o';
 
@@ -52,15 +51,6 @@ const { data } = Astro.props;
 
 
 <Layout>
-    <!-- <div class="main_more_imgs">
-    <img src={data.main_image} alt={data.name} />
-       {data.more_images.map((url) => (
-        <img src={url} alt={data.name} />
-      ))} 
-      {Array.isArray(data.more_images) && data.more_images.map((url) => (
-      <img src={url} alt={data.name} />
-      ))}
-      </div> -->
 <div class="image-gallery-wrapper">
   <button class="scroll-btn left" onclick="scrollGallery('left')">←</button>
 
