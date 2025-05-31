@@ -16,35 +16,46 @@ import FilterButton from './FilterButton.astro';
 </div>
 
 <style>
+  
 .filter {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 4rem;
+  justify-content: center;
+  gap: 2rem;
   flex-direction: row;
+  max-width: 700px;
+  margin: 0px auto 75px auto;
 }
 
 h3 {
-  font-size: 1.8rem;
-  color: var(--color-secondary);
+  font-size: 25px;
   font-weight: 400;
+  color: var(--color-primary);
 }
   .filter-wrapper {
     display: flex;
-    gap: 1rem;
-    margin: 2rem 0;
+    gap: 0.75rem;
+    margin: 1rem auto;
     justify-content: center;
+    max-width: 425px;
   }
 
   @media (max-width: 768px) {
     .filter-wrapper {
     flex-wrap: wrap;
     }
+    
   .filter {
     flex-direction: column;
     gap: 0;
     align-items: flex-start;
   }
+
+  h3 {
+  font-size: 3vw;
+  color: var(--color-secondary);
+  font-weight: 300;
+}
 }
 </style>
 
