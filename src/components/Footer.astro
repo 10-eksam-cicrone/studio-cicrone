@@ -6,22 +6,73 @@
         <p class="inkfree">~ Sincerely, Sophia & Frederik</p>
     </div>
 
-    <div></div>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/cicrone/" target="_blank" rel="noopener">
+            <img src="public/assets/some_icons/Instagram_icon.svg" alt="Instagram" />
+          </a>
+          <a href="mailto:youremail@example.com">
+            <img src="public/assets/some_icons/mail_icon.svg" alt="Email" />
+          </a>
+    </div>
 </footer>
 
 <style>
     footer {
         background-color: var(--color-salmonpink);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 4rem;
+        padding: 10vw;
     }
 
     p {
     text-align: center;
+    max-width: 40vw;
+    margin: 0 auto;
+    min-width: 250px;
+    line-height: 25px;
     }
 
     .inkfree {
     font-family: ink-free, sans-serif;
+    }
+
+    .social-icons{
+display: flex;
+flex-direction: row;
+justify-content: center;
+margin: 5vw 0 0 0;
+gap: 10px;
+    }
+
+    .social-icons img{
+        width: 8vw;
+    }
+
+    @media (min-width: 768px) {
+
+        footer {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 150px;
+padding: 100px;
+    }
+
+    p {
+        font-size: 22.5px;
+    max-width: 575px;
+    line-height: 35px;
+    }
+
+    .social-icons{
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 10px;
+margin: 0;
+    }
+
+
+    .social-icons img{
+    width: 75px;
+    }
     }
 </style>

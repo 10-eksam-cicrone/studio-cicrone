@@ -1,12 +1,18 @@
 <section class="hero">
+  <div class="hero-image">
+    <div class="hero-overlay"></div>
+    <video autoplay muted loop playsinline>
+      <source src="public/assets/video/cicróne_video.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-    <div class="hero-image">
-        <video autoplay muted loop playsinline>
-            <source src="public/assets/video/cicróne_video.webm" type="video/webm">Your browser does not support the video tag.
-</div>
-        <div class="hero-logo"><img src="public/assets/imgs_index/index_logo.svg" alt=""></div>
-   
+  <div class="hero-logo">
+    <img class="desktop" src="public/assets/imgs_index/index_logo_2.svg" alt="" />
+    <img class="mobile" src="public/assets/imgs_index/index_logo_mobile.svg" alt="" />
+  </div>
 </section>
+
 
 
 <style>
@@ -15,17 +21,10 @@
     /** Hero image styling **/
 
     .hero {
-      display: flex;
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  align-items:end;
-  justify-content: center;
-}
-
-.hero-image {
-  max-height: 100svh;
 }
 
 .hero-image video {
@@ -37,19 +36,69 @@
   object-fit: cover;
 }
 
-.hero-logo {
+.hero-overlay {
   position: absolute;
-  width: 80vw; 
-  max-width: 1600px; 
-  z-index: 10;
-  margin-bottom: 45px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.119);
+  z-index: 1;
 }
 
-.hero-logo img {
+.hero-logo {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  max-width: 1600px;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeUp 1.2s ease-out 0.5s forwards;
+}
+
+.hero-logo .mobile {
   width: 100%;
   height: auto;
   display: block;
+  opacity: 1;
 }
+
+.hero-logo .desktop {
+ display: none;
+}
+
+@media (min-width: 768px) {
+      
+  .hero-logo .mobile {
+ display: none;
+}
+
+.hero-logo .desktop {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
+
+.hero-logo{
+  width: 80vw;
+}
+    }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
 
 
 </style>
