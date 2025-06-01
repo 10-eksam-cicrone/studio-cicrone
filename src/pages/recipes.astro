@@ -25,6 +25,9 @@ console.log(data)
 <Layout>
 
   <h1>Recipes</h1>
+  <p class="page_subtext">Our recipes are thoughtfully created based on the fresh harvest each season. <br> <br>
+ We celebrate nature’s rhythms by using organic, plant-based ingredients sourced locally whenever possible. 
+This approach ensures every dish is vibrant, nourishing, and in tune with the time of year.</p>
   <section>
     <FilterSeason recipes={data} />
   </section>
@@ -47,6 +50,14 @@ console.log(data)
     margin-top: 150px;
   }
   
+   .page_subtext{
+    font-family: ink-free, sans-serif;
+    font-size: 20px;
+    max-width: 500px;
+    margin: 50px auto 0px auto;
+    color: #5496EF;
+    /* text-align: center; */
+  }
   section {
     margin: 4vw;
   }
@@ -59,10 +70,20 @@ console.log(data)
   }
 
     @media (max-width: 768px) {
+
+    h1 {
+      font-size: 14vw;
+    }
     .cards{
       grid-template-columns: 1fr;
       display: flex;
       flex-direction: column;
 }
+
+    .page_subtext{
+        font-size: 3.25vw;
+        max-width:70vw;
+        margin: 0px auto 60px auto;
+    }
   }
 </style>
