@@ -5,13 +5,19 @@ const { data, imageLeft = true } = Astro.props;
 <article class="card">
   <a href={`/single-recipe/${data.id}`} class="card-content">
     <div class={`image ${imageLeft ? 'order-1' : 'order-2'}`}>
-      <img src={data.main_image} alt={data.name} />
+      <img src={data.main_image} alt={data.name} loading="lazy" />
     </div>
 
     <div class={`text ${imageLeft ? 'order-2' : 'order-1'}`}>
       <div class="time_servings">
-        <h3>🕘 Time: {data.time} min.</h3>
-        <h3>🍽️ Servings: {data.servings} portions</h3>
+        <div class="text_icon">
+          <img class="icon_watch" src="/assets/imgs_id/watch.svg" loading="lazy" alt="serving">
+        <h3>Time: {data.time} min.</h3>
+        </div>
+        <div class="text_icon">
+          <img class="icon_plate" src="/assets/imgs_id/plate.svg" loading="lazy" alt="serving">
+          <h3>Servings: {data.servings} portions</h3>
+          </div>
       </div>
       <h2>{data.name}</h2>
       <p>{data.description}</p>
@@ -38,9 +44,10 @@ const { data, imageLeft = true } = Astro.props;
 .time_servings {
   display: flex;
   flex-direction: row;
-  max-width: 27.5vw;
+  max-width: 24.5vw;
   margin: 0 auto;
   text-align: left;
+  gap: 30px;
 }
 
 .image img {
@@ -48,6 +55,22 @@ const { data, imageLeft = true } = Astro.props;
   width: 100%;
   height: auto;
 }
+
+.text_icon {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon_watch{
+      width: 30px;
+      height: 30px;
+    }
+
+    .icon_plate{
+      width: 40px;
+      height: 40px;
+    }
 
 .text {
   flex: 1;

@@ -18,13 +18,13 @@ import ContactForm from '../components/ContactForm.astro';
   <div id="catering">
     <MobileCards
     title="Sustainable Catering" 
-    imageSrc="/assets/imgs_services/services_card_image1.png" 
+    imageSrc="/assets/imgs_services/services_card_image1.webp" 
     text="We offer seasonal, organic catering for events of all sizes – from intimate dinners to weddings and brand launches. Our menus are built around local ingredients and low-waste cooking, always aiming to nourish both people and the planet."
      />
 
      <DesktopCards
      title="Sustainable Catering"
-     imageSrc="/assets/imgs_services/services_card_image1.png"
+     imageSrc="/assets/imgs_services/services_card_image1.webp"
      text="We offer seasonal, organic catering for events of all sizes – from intimate dinners to weddings and brand launches. Our menus are built around local ingredients and low-waste cooking, always aiming to nourish both people and the planet."
    
       />
@@ -33,13 +33,13 @@ import ContactForm from '../components/ContactForm.astro';
 <div id="events">
      <MobileCards
      title="Events" 
-     imageSrc="/assets/imgs_services/services_card_image2.png" 
+     imageSrc="/assets/imgs_services/services_card_image2.webp" 
      text="We host events that bring people together through food, creativity, and thoughtful details. From intimate dinners and hands-on workshops to curated gatherings and special occasions — always with plant-based, organic food, seasonal flowers, and local products at the heart."
       />
 
       <DesktopCards
   title="Events"
-  imageSrc="/assets/imgs_services/services_card_image2.png"
+  imageSrc="/assets/imgs_services/services_card_image2.webp"
   text="We host events that bring people together through food, creativity, and thoughtful details. From intimate dinners and hands-on workshops to curated gatherings and special occasions — always with plant-based, organic food, seasonal flowers, and local products at the heart."
   class="reverse"
 />
@@ -48,13 +48,13 @@ import ContactForm from '../components/ContactForm.astro';
 <div id="retreats">
       <MobileCards
       title="Retreats" 
-      imageSrc="/assets/imgs_services/services_card_image3.png" 
+      imageSrc="/assets/imgs_services/services_card_image3.webp" 
       text="We provide soulful, nourishing meals for retreats that support rest, reflection, and inner balance. Our menus are filled with wholesome, healthy dishes made from seasonal, organic ingredients – designed to energize, ground, and care for both body and mind."
        />
 
        <DesktopCards
        title="Retreats"
-       imageSrc="/assets/imgs_services/services_card_image3.png"
+       imageSrc="/assets/imgs_services/services_card_image3.webp"
        text="We provide soulful, nourishing meals for retreats that support rest, reflection, and inner balance. Our menus are filled with wholesome, healthy dishes made from seasonal, organic ingredients – designed to energize, ground, and care for both body and mind."
      />
 </div>
@@ -62,13 +62,15 @@ import ContactForm from '../components/ContactForm.astro';
 <div id="workshops">
        <MobileCards
        title="Cooking Workshops" 
-       imageSrc="/assets/imgs_services/services_card_image4.png" 
+       imageSrc="/assets/imgs_services/services_card_image4.webp" 
        text="Whether you’re a beginner or experienced cook, we focus on real skills, natural ingredients, and joyful food."
         />
 
 <article class="workshops_desktop">
 <h2>Cooking Workshops</h2>
-<img src="/assets/imgs_services/services_card_image4_2.png" alt="Cooking workshops">
+<div class="image_container">
+<img src="/assets/imgs_services/services_card_image4_2.webp" alt="Cooking workshops">
+</div>
 <p class="cooking_workshops_p">Whether you’re a beginner or experienced cook, we focus on real skills, natural ingredients, and joyful food.</p>
 <div class="contact-button-wrapper">
 <ContactButton></ContactButton>
@@ -79,13 +81,13 @@ import ContactForm from '../components/ContactForm.astro';
 <div id="recipes">
         <MobileCards
         title="Recipe Development" 
-        imageSrc="/assets/imgs_services/services_card_image5.png" 
+        imageSrc="/assets/imgs_services/services_card_image5.webp" 
         text="We collaborate with brands, chefs, and publications to create recipes that reflect a thoughtful, nourishing, and natural approach to food. Always seasonal, always honest – from concept to styling and storytelling."
          />
 
          <DesktopCards
          title="Recipe Development"
-         imageSrc="/assets/imgs_services/services_card_image5.png"
+         imageSrc="/assets/imgs_services/services_card_image5.webp"
          text="We collaborate with brands, chefs, and publications to create recipes that reflect a thoughtful, nourishing, and natural approach to food. Always seasonal, always honest – from concept to styling and storytelling."
 
        />
@@ -93,13 +95,13 @@ import ContactForm from '../components/ContactForm.astro';
 <div id="nutrition">
          <MobileCards
          title="Nutrition" 
-         imageSrc="/assets/imgs_services/services_card_image6.png" 
+         imageSrc="/assets/imgs_services/services_card_image6.webp" 
          text="We offer food support tailored to women’s health across all life stages – from hormonal balance to fertility and overall wellbeing. Rooted in holistic nutrition, our approach is gentle, grounded, and deeply nourishing."
           />
 
           <DesktopCards
           title="Nutrition"
-          imageSrc="/assets/imgs_services/services_card_image6.png"
+          imageSrc="/assets/imgs_services/services_card_image6.webp"
           text="We offer food support tailored to women’s health across all life stages – from hormonal balance to fertility and overall wellbeing. Rooted in holistic nutrition, our approach is gentle, grounded, and deeply nourishing."
                    class="reverse"
         />
@@ -108,13 +110,13 @@ import ContactForm from '../components/ContactForm.astro';
 <div id="consulting">
           <MobileCards
           title="Consulting" 
-          imageSrc="/assets/imgs_services/services_card_image7.png" 
+          imageSrc="/assets/imgs_services/services_card_image7.webp" 
           text="We offer sustainable food consulting for both businesses and individuals.  From climate-friendly menus to reducing food waste – we make greener choices easy.  Together, we find solutions that fit your kitchen and your values."
            />
 
            <DesktopCards
            title="Consulting"
-           imageSrc="/assets/imgs_services/services_card_image7.png"
+           imageSrc="/assets/imgs_services/services_card_image7.webp"
            text="We offer sustainable food consulting for both businesses and individuals.  From climate-friendly menus to reducing food waste – we make greener choices easy.  Together, we find solutions that fit your kitchen and your values."
          />
 </div>
@@ -124,31 +126,31 @@ import ContactForm from '../components/ContactForm.astro';
 
          <ul>
 
-            <h3>Frequently Asked Questions</h3>
+            <li class="title_faq">Frequently Asked Questions</li>
 
             <li>What kind of events do you cater to?</li>
-            <p> ”We work with a range of occasions — from private parties and corporate events to workshops and retreats focused on learning and connection.”</p>
+           <li class="answer_text">”We work with a range of occasions — from private parties and corporate events to workshops and retreats focused on learning and connection.”</li>
 
             <li>How formal or casual can the event be?</li>
-            <p> ”Whether you want a relaxed gathering or a more formal occasion, we tailor the experience to fit.”</p>
+           <li class="answer_text">”Whether you want a relaxed gathering or a more formal occasion, we tailor the experience to fit.”</li>
             
             <li>How many guests can you accommodate</li>
-            <p> ”We cater to events of all sizes. Just let us know your expected number of guests so we can plan the right portions.”</p>
+            <li class="answer_text">”We cater to events of all sizes. Just let us know your expected number of guests so we can plan the right portions.”</li>
 
             <li>How does the budget affect what you offer?</li>
-            <p>”Your budget helps us choose the best menu and style for your event — from simple, nourishing options to more elaborate plated meals or buffets.”</p>
+            <li class="answer_text">”Your budget helps us choose the best menu and style for your event — from simple, nourishing options to more elaborate plated meals or buffets.”</li>
 
             <li>Can you accommodate dietary restrictions?</li>
-            <p>”Absolutely, we cater to vegan, gluten-free, nut allergies, and other dietary needs. Just let us know in advance.”</p>
+            <li class="answer_text">”Absolutely, we cater to vegan, gluten-free, nut allergies, and other dietary needs. Just let us know in advance.”</li>
 
             <li>What kinds of dining experiences do you offer?</li>
-            <p>”You can choose from casual buffets, plated dinners, or interactive food experiences. We also focus on plant-based and sustainable options.”</p>
+           <li class="answer_text">”You can choose from casual buffets, plated dinners, or interactive food experiences. We also focus on plant-based and sustainable options.”</li>
 
             <li>Can you help with the event’s theme or vibe?</li>
-            <p>”Yes! We work with you to design menus and presentations that match your event’s style — whether playful, elegant, vibrant, or something else.”</p>
+         <li class="answer_text">”Yes! We work with you to design menus and presentations that match your event’s style — whether playful, elegant, vibrant, or something else.”</li>
 
             <li>I’m not familiar with plant-based or sustainable food — can you explain?</li>
-            <p>”Of course! We’re happy to share how we approach plant-based and sustainable cooking, so you can make an informed choice that fits your event.”</p>
+            <li class="answer_text">”Of course! We’re happy to share how we approach plant-based and sustainable cooking, so you can make an informed choice that fits your event.”</li>
 
          </ul>
 
@@ -172,7 +174,7 @@ h1{
     .page_subtext{
         font-family: "ink-free";
         font-size: 3.25vw;
-        max-width:80vw;
+        max-width:70vw;
         margin: 0px auto 25px auto;
     }
 
@@ -188,6 +190,7 @@ h1{
         text-align: center;
         padding-bottom: 20px;
     }
+    
 
 article img{
     height: 100%;
@@ -200,10 +203,11 @@ article img{
     color: #012FA8;
 }
 
-h3{
-    margin: 60px auto;
+.title_faq{
+    margin: 60px auto 30px auto;
     color: #012FA8;
 text-align: center;
+font-size: 25px;
 }
 
 ul{
@@ -214,12 +218,13 @@ ul{
 }
 
 li{
-    padding-bottom: 5px;
+padding: 0 15px 5px 15px;
 }
 
-p{
+.answer_text{
     padding-bottom: 30px;
     color: #5496EF;
+    font-size: 4vw;
 }
 
 @media (max-width: 768px) {
@@ -242,15 +247,17 @@ p{
     ul{
         max-width: 625px;
         margin-bottom: 90px;
+    margin: 0 auto;
+
+
     }
 
-    li{
+    li, .answer_text {
         font-size: 25px;
-    }
-
-    p{
         line-height: 30px;
     }
+
+    
 
     article{
         min-width:650px;

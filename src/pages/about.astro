@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
     <h1>About</h1>
 
     <section class="section_about_1">
-        <div class="img_div"><img class="img1" src="public/assets/imgs_about/about_image_1.png" alt="Sophia and Frederik"></div>
+        <div class="img_div"><img class="img1" src="public/assets/imgs_about/about_image_1.webp" alt="Sophia and Frederik"></div>
         <div class="text_div"><p class="text_about_1">Our target audience is anyone with a curiosity for food. 
             From those seeking a dedicated caterer, to home cooks looking for recipes </p></div>
     </section>
@@ -33,7 +33,8 @@ Rooted in Food Studies and our family kitchen, we see cooking as a way to connec
               </p>
               <img src="public/assets/imgs_index/index_graphic-element.svg" alt="Graphic element">
             </div>
-            <img src="/assets/imgs_about/about_img_2.png" alt="Sophia Citron - Owner">
+
+            <img src="/assets/imgs_about/about_img_2.webp" alt="Sophia Citron - Owner">
 
           </div>                
 
@@ -48,7 +49,9 @@ Rooted in Food Studies and our family kitchen, we see cooking as a way to connec
             </p> 
             <img src="public/assets/imgs_index/index_graphic-element.svg" alt="Graphic element"> 
           </div>
-              <img src="/assets/imgs_about/about_img_3.png" alt="Frederik - Co-owner">
+
+              <img src="/assets/imgs_about/about_img_3.webp" alt="Frederik - Co-owner">
+
           </div>   
 
 </section>
@@ -58,7 +61,7 @@ Rooted in Food Studies and our family kitchen, we see cooking as a way to connec
 <style>
 
   h1{
-    margin: 8rem auto 3rem auto;
+    margin: 150px auto 3rem auto;
     font-size: 14vw;
   }
 
@@ -69,9 +72,14 @@ Rooted in Food Studies and our family kitchen, we see cooking as a way to connec
     margin: 0 auto 14vw auto;
 }
 
-.img1 {
-    display: flex;
+.img_div{
   height: 50vw;
+  width: auto;
+}
+
+.img1 {
+  height: 100%;
+  width: 100%;
   padding-right: 4vw;
 }
 
@@ -145,6 +153,8 @@ h3{
     padding-bottom: 20px;
   }
 
+
+
 .profile_1 img {
   max-width: 400px;
   height: auto;
@@ -176,11 +186,18 @@ h3{
     justify-content: center;
     max-width: 30vw;
 }
-    
-    .img1{
-        height: 425px;
-        padding-right: 70px;
-    }
+
+.img_div{
+  height: 425px;
+  width: auto;
+}
+
+.img1 {
+  height: 100%;
+  width: 100%;
+  padding-right: 70px;
+}
+  
 
     .text_about_1{
     font-size: 20px;

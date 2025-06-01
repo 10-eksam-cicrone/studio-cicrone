@@ -3,55 +3,42 @@
   <p>Give us a message about your upcoming event and we will assemble the perfect menu for you</p>
 
   <form>
-    <label>Name</label>
-    <input type="text" placeholder="Name" required />
-
-    <label>Mail</label>
-    <input type="email" placeholder="Mail" required />
-
-   <div class="desktop_layout">
-
-    <div class="desktop_layout_singular">
-
-    <label>Service type</label>
-    <input type="text" placeholder="Service type" />
-
-  </div>
-
-  <div class="desktop_layout_singular">
-
-    <label>Phone number</label>
-    <input type="tel" placeholder="Phone number" />
-
-  </div>
-
-  </div>
-
-  <div class="desktop_layout">
-
-    <div class="desktop_layout_singular">
-
-    <label>Number of guests</label>
-    <input type="number" placeholder="0" />
-
-    </div>
-
-    <div class="desktop_layout_singular">
-
-    <label>Date of event</label>
-    <input type="date" />
-
-    </div>
-
-  </div>
-
-    <label>Message</label>
-    <textarea placeholder="Write us a message"></textarea>
-
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Name" required />
   
-    <a href="mailto:youremail@example.com"><button type="submit">SEND</button></a>
-
+    <label for="mail">Mail</label>
+    <input type="email" id="mail" placeholder="Mail" required />
+  
+    <div class="desktop_layout">
+      <div class="desktop_layout_singular">
+        <label for="service-type">Service type</label>
+        <input type="text" id="service-type" placeholder="Service type" />
+      </div>
+  
+      <div class="desktop_layout_singular">
+        <label for="phone-number">Phone number</label>
+        <input type="tel" id="phone-number" placeholder="Phone number" />
+      </div>
+    </div>
+  
+    <div class="desktop_layout">
+      <div class="desktop_layout_singular">
+        <label for="number-guests">Number of guests</label>
+        <input type="number" id="number-guests" placeholder="0" />
+      </div>
+  
+      <div class="desktop_layout_singular">
+        <label for="date-event">Date of event</label>
+        <input type="date" id="date-event" />
+      </div>
+    </div>
+  
+    <label for="message">Message</label>
+    <textarea id="message" placeholder="Write us a message"></textarea>
+  
+    <button type="submit">SEND</button>
   </form>
+  
   
 </section>
 
