@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
     <h1>About</h1>
 
     <section class="section_about_1">
-        <div class="img_div"><img class="img1" src="public/assets/imgs_about/about_image_1.webp" alt="Sophia and Frederik"></div>
+        <div class="img_div"><img class="img1" src="/assets/imgs_about/about_image_1.webp" alt="Sophia and Frederik"></div>
         <div class="text_div"><p class="text_about_1">Our target audience is anyone with a curiosity for food. 
             From those seeking a dedicated caterer, to home cooks looking for recipes </p></div>
     </section>
@@ -31,7 +31,7 @@ Rooted in Food Studies and our family kitchen, we see cooking as a way to connec
                 a way to reconnect people with nature, support food sovereignty, and cultivate a healthy, colorful, and caring food culture.
                 She is our cake and dessert master and loves to experiment with grandma's cakes or layer chocolate ganache desserts.
               </p>
-              <img src="public/assets/imgs_index/index_graphic-element.svg" alt="Graphic element">
+              <img class="graphic_img" src="/assets/imgs_index/index_graphic-element.svg" alt="Graphic element">
             </div>
 
             <img src="/assets/imgs_about/about_img_2.webp" alt="Sophia Citron - Owner">
@@ -47,7 +47,7 @@ Rooted in Food Studies and our family kitchen, we see cooking as a way to connec
                 During his studies, 
                 he specialized in food waste and continues to explore creative ways to reuse ingredients and cook more sustainably.
             </p> 
-            <img src="public/assets/imgs_index/index_graphic-element.svg" alt="Graphic element"> 
+            <img class="graphic_img" src="/assets/imgs_index/index_graphic-element.svg" alt="Graphic element"> 
           </div>
 
               <img src="/assets/imgs_about/about_img_3.webp" alt="Frederik - Co-owner">
@@ -73,8 +73,8 @@ Rooted in Food Studies and our family kitchen, we see cooking as a way to connec
 }
 
 .img_div{
-  height: 50vw;
-  width: auto;
+  height: auto;
+  width: 50vw;
 }
 
 .img1 {
@@ -103,7 +103,7 @@ Rooted in Food Studies and our family kitchen, we see cooking as a way to connec
 .section_about_2 {
   max-width: 80vw;    
   margin: 0 auto;
-  padding-bottom: 25px; 
+  margin-bottom: 25px; 
   line-height: 28.5px;       
 }
 
@@ -142,7 +142,7 @@ h3{
 
 .profile_1 p, .profile_2 p{
   color: #5496EF;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 .profile-text_1, .profile-text_2{
@@ -153,16 +153,8 @@ h3{
     padding-bottom: 20px;
   }
 
-
-
-.profile_1 img {
-  max-width: 400px;
-  height: auto;
-  align-self: center;
-}
-
-.profile_2 img {
-  max-width: 100%;
+.graphic_img{
+  width: 100px;
   height: auto;
   align-self: center;
 }
@@ -188,8 +180,8 @@ h3{
 }
 
 .img_div{
-  height: 425px;
-  width: auto;
+  height: auto;
+  width: 425px;
 }
 
 .img1 {
@@ -197,7 +189,6 @@ h3{
   width: 100%;
   padding-right: 70px;
 }
-  
 
     .text_about_1{
     font-size: 20px;
@@ -212,13 +203,11 @@ h2{
     line-height: 40px;
 }
 
-
 .section_about_2{
   max-width: 650px;
-  padding-bottom: 50px; 
+  padding-bottom: 75px; 
   line-height: 28.5px;      
 }
-
 
 .section_about_2 p{
     font-size: 20px;
@@ -250,13 +239,8 @@ h2{
 
   .profile-text_2 img, .profile-text_1 img {
     margin-top: 20px;
-  aspect-ratio: 112/25;
-  width: 100%;
-    max-width: 200px;
-    height: auto;
+  width: 100px;
     margin-left: 0;
-    order: 0;
-    border-radius: 0;
 }
 
 }
