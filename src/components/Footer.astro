@@ -7,12 +7,16 @@
     </div>
 
     <div class="social-icons">
+        <div class="instagram-icon">
         <a href="https://www.instagram.com/cicrone/" target="_blank" rel="noopener">
             <img src="public/assets/some_icons/Instagram_icon.svg" alt="Instagram" />
           </a>
+        </div>
+          <div class="mail-icon">
           <a href="mailto:studiocicrone@gmail.com">
             <img src="public/assets/some_icons/mail_icon.svg" alt="Email" />
           </a>
+        </div>
     </div>
 </footer>
 
@@ -32,6 +36,7 @@
 
     .inkfree {
     font-family: ink-free, sans-serif;
+    padding-top: 25px;
     }
 
     .social-icons{
@@ -42,8 +47,14 @@ margin: 5vw 0 0 0;
 gap: 10px;
     }
 
+.instagram-icon, .mail-icon{
+    height: 30px;
+    width: 30px;
+}
+
     .social-icons img{
-        width: 8vw;
+        height: 100%;
+        width: 100%;
     }
 
     @media (min-width: 768px) {
@@ -70,9 +81,14 @@ gap: 10px;
 margin: 0;
     }
 
-    .social-icons img{
-    width: 75px;
-    }
+    .instagram-icon, .mail-icon{
+    height: 60px;
+    width: 60px;
+}
 
+    .social-icons img{
+    height: 100%;
+    width: 100%;
+    }
     }
 </style>

@@ -7,7 +7,7 @@ const currentPath = Astro.url.pathname;
 <header class={isHome ? 'header-home' : ''}>
 
   <div class="logo">
-    <a href="/"><img src="public/assets/logo_svg/logo.svg" alt=""></a>
+    <a href="/"><img src="public/assets/logo_svg/logo.svg" fetchpriority="high" alt="Lemon logo"></a>
   </div>
 
   <div>
@@ -21,7 +21,7 @@ const currentPath = Astro.url.pathname;
 
 </div>
 
-  <div class="burger" aria-label="Toggle menu">
+  <div class="burger" >
     <span></span>
     <span></span>
     <span></span>
@@ -78,6 +78,13 @@ align-items: center;
 
     .logo img{
         width: 55px;
+        height: 100%;
+        opacity: 0.75;
+        transition: 0.3s ease-in-out, color 0.4s ease-in-out;
+    }
+
+    .logo img:hover{
+      opacity: 1;
     }
 
 nav {
