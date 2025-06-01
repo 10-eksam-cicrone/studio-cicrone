@@ -75,12 +75,12 @@ const { data } = Astro.props;
     <div class="time_servings"> 
 
       <div class="text_icon">
-      <img class="icon" src="/assets/imgs_id/watch.svg" alt="serving">
+      <img class="icon_watch" src="/assets/imgs_id/watch.svg" alt="serving">
     <h3>Time: {data.time} min.</h3>
     </div>
 
     <div class="text_icon">
-    <img class="icon" src="/assets/imgs_id/plate.svg" alt="serving">
+    <img class="icon_plate" src="/assets/imgs_id/plate.svg" alt="serving">
     <h3>Servings: {data.servings} portions</h3>
     </div>
 </div>
@@ -229,8 +229,8 @@ ol li::marker {
     .seasons {
       display: flex;
       justify-content: flex-start;
-      padding-left: 3rem;
-            align-items: center;
+      padding-left: 5rem;
+      align-items: center;
 
     }
     
@@ -252,7 +252,10 @@ ol li::marker {
   transform: rotate(-3deg); /* hover effekt så den drejer */
 }
 
-.icon {
+.icon_watch {
+  width: 40px;
+  height: 40px;
+}.icon_plate {
   width: 50px;
   height: 50px;
 }
