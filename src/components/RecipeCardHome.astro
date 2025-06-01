@@ -29,22 +29,22 @@ const { data, imageLeft = true } = Astro.props;
 .card {
   display: flex;
   justify-content: center;
-  margin: 5rem 2rem;
+  margin: 5rem;
 }
 
 .card-content {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+grid-template-columns: 1fr 1.5fr 1fr;
+  align-items: center;
+  gap: 2rem;
   max-width: 1400px;
   width: 100%;
-  gap: 1rem;
-  align-items: center;
 }
 
 .time_servings {
   display: flex;
   flex-direction: row;
-  max-width: 400px;
+  /* max-width: 400px; */
   margin: 0 auto;
   text-align: left;
   gap: 30px;
@@ -77,13 +77,19 @@ const { data, imageLeft = true } = Astro.props;
   text-align: center;
   max-width: 50vw;
   margin: 0 auto;
-  line-height: 2vw;
-  font-size: 1.5vw;
+  /* line-height: 2vw; */
+  /* font-size: 1.5vw; */
+
+  grid-column: 2; /* så teksten er i midten af column */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 }
 
 h3{
     font-size: 15px;
-    max-width: 400px;
+    /* max-width: 400px; */
     color: #012FA8;
     text-align: left;
   }
@@ -95,7 +101,7 @@ h2{
   margin: 0 auto;
   color: #858854;
   font-weight: 300;
-  text-align: left;
+  text-align: center;
 }
 
 p{
@@ -116,7 +122,11 @@ p{
 
 /* Mobile */
 @media (max-width: 900px) {
+  .card {
+    margin: 1rem 1rem 5rem 1rem;
+  }
   .card-content {
+    display: flex;
     flex-direction: column;
     text-align: center;
     gap: 1rem;
@@ -124,9 +134,9 @@ p{
   }
 
   h3{
-    font-size: 2vw;
-    line-height: 3.5vw;
-    max-width: 300px;
+    font-size: 1rem;
+    /* line-height: 3.5vw; */
+    /* max-width: 300px; */
     margin: 0 auto;
     color: #012FA8;
     text-align: left;
@@ -134,6 +144,7 @@ p{
 
   .image img {
   max-width: 350px;
+  max-height: 350px;
   width: 100%;
   height: auto;
 }
@@ -145,21 +156,25 @@ p{
 }
 
 h2{
-  padding: 25px 0px 25px 0px;
-  font-size: 2.75vw;
-  max-width: 300px;
-  line-height: 3vw;
+  padding: 15px 0px 15px 0px;
+  font-size: 1.6rem;
+  /* max-width: 300px; */
+  /* line-height: 3vw; */
   margin: 0 auto;
   color: #858854;
   font-weight: 300;
-  text-align: left;
+  text-align: center;
 }
 
 p{
   max-width: 300px;
   text-align: left;
-  font-size: 2.5vw;
-  line-height: 3.5vw;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.text {
+    max-width: 400px;
 }
 
 .order-1 {
@@ -168,5 +183,15 @@ p{
 .order-2 {
   order: 0;
 }
+
+    .icon_watch{
+      width: 20px;
+      height: 20px;
+    }
+
+    .icon_plate{
+      width: 30px;
+      height: 30px;
+    }
 }
 </style>
