@@ -31,9 +31,9 @@ const currentPath = Astro.url.pathname;
 
 <div class="mobile-menu">
   <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
-  <a href="/services" class={currentPath === '/services' ? 'active' : ''}>Services</a>
-  <a href="/recipes" class={currentPath === '/recipes' ? 'active' : ''}>Recipes</a>
-  <a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a>
+  <a href="/services" class={currentPath.startsWith('/services') ? 'active' : ''}>Services</a>
+  <a href="/recipes" class={currentPath.startsWith('/recipes') ? 'active' : ''}>Recipes</a>
+  <a href="/about" class={currentPath.startsWith('/about') ? 'active' : ''}>About</a>
 </div>
 
 <style>
